@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol UserInfoUseCase {
+public protocol UserInfoUseCase {
     func createUser(userName: String) async throws -> UserInfo
 }
 
-final class UserInfoUseCaseImpl: UserInfoUseCase {
+public final class UserInfoUseCaseImpl: UserInfoUseCase {
     private let userInfoRepository: UserInfoRepository
     
     init(userInfoRepository: UserInfoRepository) {
         self.userInfoRepository = userInfoRepository
     }
     
-    func createUser(userName: String) async throws -> UserInfo {
+    public func createUser(userName: String) async throws -> UserInfo {
         let result = try await userInfoRepository.createUser(userName: userName)
         return result
     }

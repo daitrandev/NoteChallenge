@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserInfo {
+public struct UserInfo {
     let id: String
     let userName: String
     let notes: [UserNote]

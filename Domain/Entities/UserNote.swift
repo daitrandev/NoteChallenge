@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserNote {
+public struct UserNote {
     let id: String
     let content: String
 }
