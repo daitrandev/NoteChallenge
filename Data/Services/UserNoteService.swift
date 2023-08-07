@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-protocol UserNoteService {
+public protocol UserNoteService {
     func createNote(userName: String, noteContent: String) async throws -> [UserNote]
     func updateNote(userName: String, note: UserNote) async throws -> [UserNote]
     func deleteNote(userName: String, note: UserNote) async throws -> [UserNote]

@@ -15,7 +15,7 @@ public protocol UserNoteUseCase {
 public final class UserNoteUseCaseImpl: UserNoteUseCase {
     private let userNoteRepository: UserNotesRepository
     
-    init(userNoteRepository: UserNotesRepository) {
+    public init(userNoteRepository: UserNotesRepository) {
         self.userNoteRepository = userNoteRepository
     }
     

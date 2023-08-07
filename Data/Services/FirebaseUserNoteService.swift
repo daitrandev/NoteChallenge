@@ -13,7 +13,7 @@ import FirebaseDatabaseSwift
 public final class FirebaseUserNoteService: UserNoteService {
     private let databaseRef: DatabaseReference
     
-    init(databaseRef: DatabaseReference) {
+    public init(databaseRef: DatabaseReference) {
         self.databaseRef = databaseRef
     }
     
@@ -42,7 +42,7 @@ public final class FirebaseUserNoteService: UserNoteService {
         return notes
     }
     
-    func fetchNotes(userName: String) async throws -> [UserNote] {
+    public func fetchNotes(userName: String) async throws -> [UserNote] {
         try await withCheckedThrowingContinuation { continuation in
             databaseRef.child(userName).child("notes").getData { error, snapshot in
                 guard error == nil, let dictionaries = snapshot?.value as? [NSDictionary] else {
