@@ -8,12 +8,10 @@
 import Foundation
 
 public struct UserInfo {
-    let id: String
-    let userName: String
-    let notes: [UserNote]
+    public let userName: String
+    public let notes: [UserNote]
     
-    public init(id: String, userName: String, notes: [UserNote]) {
-        self.id = id
+    public init(userName: String, notes: [UserNote]) {
         self.userName = userName
         self.notes = notes
     }

@@ -8,11 +8,20 @@
 import Foundation
 
 public struct UserNote {
-    let id: String
-    let content: String
+    public let id: String
+    public let content: String
     
     public init(id: String, content: String) {
         self.id = id
         self.content = content
+    }
+    
+    public init?(dictionary: NSDictionary) {
+        guard
+            let id = dictionary["id"] as? String,
+            let content = dictionary["content"] as? String else {
+            return nil
+        }
+        self.init(id: id, content: content)
     }
 }
