@@ -31,6 +31,7 @@
 		F8D88A4D2A80AC5C005DB81B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8D88A4C2A80AC5C005DB81B /* FirebaseDatabaseSwift */; };
 		F8D88A4F2A80ACA6005DB81B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D889EB2A809AC3005DB81B /* Domain.framework */; };
 		F8D88A552A80AD03005DB81B /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */; };
+		F8D88A572A80ADC9005DB81B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A562A80ADC9005DB81B /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		F8D88A3A2A80AA61005DB81B /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
+		F8D88A562A80ADC9005DB81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				F8D889BA2A809702005DB81B /* ContentView.swift */,
 				F8D889BC2A809703005DB81B /* Assets.xcassets */,
 				F8D889BE2A809703005DB81B /* Preview Content */,
+				F8D88A562A80ADC9005DB81B /* AppDelegate.swift */,
 			);
 			path = NoteChallenge;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D88A572A80ADC9005DB81B /* AppDelegate.swift in Sources */,
 				F8D889BB2A809702005DB81B /* ContentView.swift in Sources */,
 				F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */,
 			);
