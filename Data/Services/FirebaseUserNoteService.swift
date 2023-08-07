@@ -10,21 +10,21 @@ import Domain
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-final class FirebaseUserNoteService: UserNoteService {
+public final class FirebaseUserNoteService: UserNoteService {
     private let databaseRef: DatabaseReference
     
     init(databaseRef: DatabaseReference) {
         self.databaseRef = databaseRef
     }
     
-    func createNote(userName: String, noteContent: String) async throws -> [UserNote] {
+    public func createNote(userName: String, noteContent: String) async throws -> [UserNote] {
         var notes = try await fetchNotes(userName: userName)
         let newNote = UserNote(id: String(notes.count + 1), content: noteContent)
         notes.append(newNote)
         return try await saveNotes(notes: notes, userName: userName)
     }
     
-    func updateNote(userName: String, note: UserNote) async throws -> [UserNote] {
+    public func updateNote(userName: String, note: UserNote) async throws -> [UserNote] {
         var notes = try await fetchNotes(userName: userName)
         guard let existingNoteIndex = notes.firstIndex(where: { $0.id == note.id }) else {
             throw NSError(domain: "Update note error", code: 0)
@@ -33,7 +33,7 @@ final class FirebaseUserNoteService: UserNoteService {
         return notes
     }
     
-    func deleteNote(userName: String, note: UserNote) async throws -> [UserNote] {
+    public func deleteNote(userName: String, note: UserNote) async throws -> [UserNote] {
         var notes = try await fetchNotes(userName: userName)
         guard let existingNoteIndex = notes.firstIndex(where: { $0.id == note.id }) else {
             throw NSError(domain: "Delete note error", code: 0)

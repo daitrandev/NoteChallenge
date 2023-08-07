@@ -14,7 +14,7 @@ public protocol UserInfoUseCase {
 public final class UserInfoUseCaseImpl: UserInfoUseCase {
     private let userInfoRepository: UserInfoRepository
     
-    init(userInfoRepository: UserInfoRepository) {
+    public init(userInfoRepository: UserInfoRepository) {
         self.userInfoRepository = userInfoRepository
     }
     

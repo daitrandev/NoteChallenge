@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-protocol UserInfoService {
+public protocol UserInfoService {
     func createUser(userName: String) async throws -> UserInfo
     func fetchUserInfo(userName: String) async throws -> UserInfo
 }

@@ -8,18 +8,18 @@
 import Foundation
 import Domain
 
-final class UserInfoRepositoryImpl: UserInfoRepository {
+public final class UserInfoRepositoryImpl: UserInfoRepository {
     private let service: UserInfoService
     
-    init(service: UserInfoService) {
+    public init(service: UserInfoService) {
         self.service = service
     }
     
-    func fetchUserInfo(userName: String) async throws -> UserInfo {
+    public func fetchUserInfo(userName: String) async throws -> UserInfo {
         try await service.fetchUserInfo(userName: userName)
     }
     
-    func createUser(userName: String) async throws -> UserInfo {
+    public func createUser(userName: String) async throws -> UserInfo {
         try await service.createUser(userName: userName)
     }
 }
