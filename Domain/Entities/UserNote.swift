@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct UserNote {
+    let id: String
+    let content: String
+}

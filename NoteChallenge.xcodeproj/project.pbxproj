@@ -20,9 +20,8 @@
 		F8D88A182A809CCC005DB81B /* UserNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A172A809CCC005DB81B /* UserNotesRepository.swift */; };
 		F8D88A1B2A809D0F005DB81B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A1A2A809D0F005DB81B /* UserInfo.swift */; };
 		F8D88A1D2A809D16005DB81B /* UserNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A1C2A809D16005DB81B /* UserNote.swift */; };
-		F8D88A202A809D40005DB81B /* FetchUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A1F2A809D40005DB81B /* FetchUserInfoUseCase.swift */; };
-		F8D88A222A809D4B005DB81B /* FetchUserNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A212A809D4B005DB81B /* FetchUserNotesUseCase.swift */; };
-		F8D88A242A809D67005DB81B /* CreateUserNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A232A809D67005DB81B /* CreateUserNoteUseCase.swift */; };
+		F8D88A242A809D67005DB81B /* UserNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A232A809D67005DB81B /* UserNoteUseCase.swift */; };
+		F8D88A262A809FE0005DB81B /* UserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A252A809FE0005DB81B /* UserInfoUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +69,8 @@
 		F8D88A172A809CCC005DB81B /* UserNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotesRepository.swift; sourceTree = "<group>"; };
 		F8D88A1A2A809D0F005DB81B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		F8D88A1C2A809D16005DB81B /* UserNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNote.swift; sourceTree = "<group>"; };
-		F8D88A1F2A809D40005DB81B /* FetchUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserInfoUseCase.swift; sourceTree = "<group>"; };
-		F8D88A212A809D4B005DB81B /* FetchUserNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserNotesUseCase.swift; sourceTree = "<group>"; };
-		F8D88A232A809D67005DB81B /* CreateUserNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserNoteUseCase.swift; sourceTree = "<group>"; };
+		F8D88A232A809D67005DB81B /* UserNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteUseCase.swift; sourceTree = "<group>"; };
+		F8D88A252A809FE0005DB81B /* UserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,9 +179,8 @@
 		F8D88A1E2A809D2A005DB81B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				F8D88A1F2A809D40005DB81B /* FetchUserInfoUseCase.swift */,
-				F8D88A212A809D4B005DB81B /* FetchUserNotesUseCase.swift */,
-				F8D88A232A809D67005DB81B /* CreateUserNoteUseCase.swift */,
+				F8D88A232A809D67005DB81B /* UserNoteUseCase.swift */,
+				F8D88A252A809FE0005DB81B /* UserInfoUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -339,13 +336,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D88A202A809D40005DB81B /* FetchUserInfoUseCase.swift in Sources */,
 				F8D88A182A809CCC005DB81B /* UserNotesRepository.swift in Sources */,
-				F8D88A242A809D67005DB81B /* CreateUserNoteUseCase.swift in Sources */,
+				F8D88A242A809D67005DB81B /* UserNoteUseCase.swift in Sources */,
 				F8D88A1B2A809D0F005DB81B /* UserInfo.swift in Sources */,
 				F8D88A1D2A809D16005DB81B /* UserNote.swift in Sources */,
 				F8D88A162A809CBB005DB81B /* UserInfoRepository.swift in Sources */,
-				F8D88A222A809D4B005DB81B /* FetchUserNotesUseCase.swift in Sources */,
+				F8D88A262A809FE0005DB81B /* UserInfoUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

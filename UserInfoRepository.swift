@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol UserInfoRepository {
+    func fetchUserInfo(userId: String) async throws -> UserInfo
+    func createUser(userName: String) async throws -> UserInfo
+}

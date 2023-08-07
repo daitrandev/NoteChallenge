@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct UserInfo {
+    let id: String
+    let userName: String
+    let notes: [UserNote]
+}
