@@ -10,20 +10,22 @@ import Domain
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-final class FirebaseUserInfoService: UserInfoService {
+public final class FirebaseUserInfoService: UserInfoService {
     private var databaseRef: DatabaseReference
     
-    init(databaseRef: DatabaseReference) {
+    public init(databaseRef: DatabaseReference) {
         self.databaseRef = databaseRef
     }
     
-    func createUser(userName: String) async throws -> UserInfo {
-        let userInfo = UserInfo(userName: userName, notes: [])
-        databaseRef.setValue(userInfo, forKey: "1")
+    public func createUser(userName: String) async throws -> UserInfo {
+        guard let dictionary = UserInfo(userName: userName, notes: []).dict else {
+            throw NSError(domain: "Cannot parse userInfo", code: 0)
+        }
+        try await databaseRef.child(userName).setValue(dictionary)
         return UserInfo(userName: userName, notes: [])
     }
     
-    func fetchUserInfo(userName: String) async throws -> UserInfo {
+    public func fetchUserInfo(userName: String) async throws -> UserInfo {
         try await withCheckedThrowingContinuation { continuation in
             databaseRef.child(userName).getData { error, snapshot in
                 if let error = error {
