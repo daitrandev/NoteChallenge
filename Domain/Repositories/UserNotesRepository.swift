@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol UserNotesRepository {
-    func createUserNote(userId: String, content: String) async throws -> UserNote
-    func updateUserNote(userId: String, userNote: String) async throws -> UserNote
-    func fetchUserNote(userId: String) async throws -> [UserNote]
+    func createNote(userId: String, content: String) async throws -> [UserNote]
+    func updateNote(userId: String, note: UserNote) async throws -> [UserNote]
+    func fetchNotes(userId: String) async throws -> [UserNote]
 }
