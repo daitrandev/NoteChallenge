@@ -18,7 +18,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8D889DA2A8098F3005DB81B"
+               BlueprintIdentifier = "F8D88A092A809B4C005DB81B"
                BuildableName = "DomainTests.xctest"
                BlueprintName = "DomainTests"
                ReferencedContainer = "container:NoteChallenge.xcodeproj">

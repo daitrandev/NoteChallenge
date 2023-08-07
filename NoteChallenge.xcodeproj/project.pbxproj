@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		F8D88A3C2A80AA61005DB81B /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D88A2E2A80AA61005DB81B /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8D88A3F2A80AA61005DB81B /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D88A2C2A80AA60005DB81B /* Data.framework */; };
 		F8D88A402A80AA61005DB81B /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8D88A2C2A80AA60005DB81B /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F8D88A482A80ABC8005DB81B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */; };
 		F8D88A4B2A80AC5C005DB81B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8D88A4A2A80AC5C005DB81B /* FirebaseDatabase */; };
 		F8D88A4D2A80AC5C005DB81B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8D88A4C2A80AC5C005DB81B /* FirebaseDatabaseSwift */; };
 		F8D88A4F2A80ACA6005DB81B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D889EB2A809AC3005DB81B /* Domain.framework */; };
@@ -95,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		F8D88A2E2A80AA61005DB81B /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		F8D88A332A80AA61005DB81B /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D88A3A2A80AA61005DB81B /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
-		F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		F8D88A562A80ADC9005DB81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +192,7 @@
 		F8D889B72A809702005DB81B /* NoteChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */,
 				F8D889B82A809702005DB81B /* NoteChallengeApp.swift */,
 				F8D889BA2A809702005DB81B /* ContentView.swift */,
 				F8D889BC2A809703005DB81B /* Assets.xcassets */,
@@ -258,7 +259,6 @@
 		F8D88A2D2A80AA61005DB81B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */,
 				F8D88A2E2A80AA61005DB81B /* Data.h */,
 			);
 			path = Data;
@@ -460,6 +460,7 @@
 			files = (
 				F8D889C02A809703005DB81B /* Preview Assets.xcassets in Resources */,
 				F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */,
+				F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +482,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D88A482A80ABC8005DB81B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,10 +698,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NoteChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = C59ZVY87DS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -715,8 +716,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.NoteChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -729,10 +731,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NoteChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = C59ZVY87DS;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -746,8 +749,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.NoteChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
