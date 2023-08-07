@@ -29,6 +29,9 @@
 		F8A952992A812F78004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A952982A812F78004AEE5F /* FirebaseDatabase */; };
 		F8A9529B2A812F78004AEE5F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9529A2A812F78004AEE5F /* FirebaseDatabaseSwift */; };
 		F8A9529E2A813589004AEE5F /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9529D2A813589004AEE5F /* Encodable+Ext.swift */; };
+		F8A952A12A814C0F004AEE5F /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A02A814C0F004AEE5F /* NoteListView.swift */; };
+		F8A952A32A814C6A004AEE5F /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A22A814C6A004AEE5F /* NoteListViewModel.swift */; };
+		F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A42A814F14004AEE5F /* NoteListRow.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -157,6 +160,9 @@
 		F8A9528B2A810812004AEE5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8A9528D2A810D8B004AEE5F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F8A9529D2A813589004AEE5F /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
+		F8A952A02A814C0F004AEE5F /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		F8A952A22A814C6A004AEE5F /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
+		F8A952A42A814F14004AEE5F /* NoteListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRow.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 		F8A952702A810789004AEE5F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F8A9529F2A8148F2004AEE5F /* NoteList */,
 				F8A9528A2A810809004AEE5F /* Login */,
 				F8A952712A810789004AEE5F /* Presenter.h */,
 			);
@@ -298,6 +305,16 @@
 				F8A9529D2A813589004AEE5F /* Encodable+Ext.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		F8A9529F2A8148F2004AEE5F /* NoteList */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952A02A814C0F004AEE5F /* NoteListView.swift */,
+				F8A952A22A814C6A004AEE5F /* NoteListViewModel.swift */,
+				F8A952A42A814F14004AEE5F /* NoteListRow.swift */,
+			);
+			path = NoteList;
 			sourceTree = "<group>";
 		};
 		F8D889AC2A809702005DB81B = {
@@ -721,8 +738,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A952A32A814C6A004AEE5F /* NoteListViewModel.swift in Sources */,
 				F8A9528E2A810D8B004AEE5F /* LoginViewModel.swift in Sources */,
+				F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */,
 				F8A9528C2A810812004AEE5F /* LoginView.swift in Sources */,
+				F8A952A12A814C0F004AEE5F /* NoteListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
