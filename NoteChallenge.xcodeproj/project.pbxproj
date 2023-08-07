@@ -189,6 +189,17 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		F8A952692A81073A004AEE5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
+				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
+				F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */,
+				F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F8D889AC2A809702005DB81B = {
 			isa = PBXGroup;
 			children = (
@@ -286,10 +297,7 @@
 			children = (
 				F8A952642A80E9DB004AEE5F /* Repositories */,
 				F8D88A2E2A80AA61005DB81B /* Data.h */,
-				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
-				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
-				F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */,
-				F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */,
+				F8A952692A81073A004AEE5F /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
