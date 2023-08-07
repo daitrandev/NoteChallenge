@@ -16,7 +16,6 @@
 		F8D889FF2A809AC3005DB81B /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8D889EB2A809AC3005DB81B /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8D88A0D2A809B4C005DB81B /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A0C2A809B4C005DB81B /* DomainTests.swift */; };
 		F8D88A0E2A809B4C005DB81B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D889EB2A809AC3005DB81B /* Domain.framework */; platformFilter = ios; };
-		F8D88A162A809CBB005DB81B /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A152A809CBB005DB81B /* UserInfoRepository.swift */; };
 		F8D88A182A809CCC005DB81B /* UserNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A172A809CCC005DB81B /* UserNotesRepository.swift */; };
 		F8D88A1B2A809D0F005DB81B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A1A2A809D0F005DB81B /* UserInfo.swift */; };
 		F8D88A1D2A809D16005DB81B /* UserNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A1C2A809D16005DB81B /* UserNote.swift */; };
@@ -30,6 +29,8 @@
 		F8D88A482A80ABC8005DB81B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */; };
 		F8D88A4B2A80AC5C005DB81B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8D88A4A2A80AC5C005DB81B /* FirebaseDatabase */; };
 		F8D88A4D2A80AC5C005DB81B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8D88A4C2A80AC5C005DB81B /* FirebaseDatabaseSwift */; };
+		F8D88A4F2A80ACA6005DB81B /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D889EB2A809AC3005DB81B /* Domain.framework */; };
+		F8D88A552A80AD03005DB81B /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,13 @@
 			remoteGlobalIDString = F8D88A2B2A80AA60005DB81B;
 			remoteInfo = Data;
 		};
+		F8D88A512A80ACA6005DB81B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8D889AD2A809702005DB81B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8D889EA2A809AC3005DB81B;
+			remoteInfo = Domain;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,7 +103,6 @@
 		F8D889ED2A809AC3005DB81B /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		F8D88A0A2A809B4C005DB81B /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D88A0C2A809B4C005DB81B /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
-		F8D88A152A809CBB005DB81B /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = SOURCE_ROOT; };
 		F8D88A172A809CCC005DB81B /* UserNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotesRepository.swift; sourceTree = "<group>"; };
 		F8D88A1A2A809D0F005DB81B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		F8D88A1C2A809D16005DB81B /* UserNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNote.swift; sourceTree = "<group>"; };
@@ -106,6 +113,7 @@
 		F8D88A332A80AA61005DB81B /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D88A3A2A80AA61005DB81B /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		F8D88A472A80ABC8005DB81B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D88A4F2A80ACA6005DB81B /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +171,7 @@
 				F8D88A2D2A80AA61005DB81B /* Data */,
 				F8D88A392A80AA61005DB81B /* DataTests */,
 				F8D889B62A809702005DB81B /* Products */,
+				F8D88A4E2A80ACA6005DB81B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,7 +228,7 @@
 		F8D88A142A809CA9005DB81B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				F8D88A152A809CBB005DB81B /* UserInfoRepository.swift */,
+				F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */,
 				F8D88A172A809CCC005DB81B /* UserNotesRepository.swift */,
 			);
 			path = Repositories;
@@ -257,6 +267,13 @@
 				F8D88A3A2A80AA61005DB81B /* DataTests.swift */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		F8D88A4E2A80ACA6005DB81B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +370,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F8D88A522A80ACA6005DB81B /* PBXTargetDependency */,
 			);
 			name = Data;
 			productName = Data;
@@ -491,7 +509,7 @@
 				F8D88A242A809D67005DB81B /* UserNoteUseCase.swift in Sources */,
 				F8D88A1B2A809D0F005DB81B /* UserInfo.swift in Sources */,
 				F8D88A1D2A809D16005DB81B /* UserNote.swift in Sources */,
-				F8D88A162A809CBB005DB81B /* UserInfoRepository.swift in Sources */,
+				F8D88A552A80AD03005DB81B /* UserInfoRepository.swift in Sources */,
 				F8D88A262A809FE0005DB81B /* UserInfoUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +565,11 @@
 			isa = PBXTargetDependency;
 			target = F8D88A2B2A80AA60005DB81B /* Data */;
 			targetProxy = F8D88A3D2A80AA61005DB81B /* PBXContainerItemProxy */;
+		};
+		F8D88A522A80ACA6005DB81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8D889EA2A809AC3005DB81B /* Domain */;
+			targetProxy = F8D88A512A80ACA6005DB81B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
