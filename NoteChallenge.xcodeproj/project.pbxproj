@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
+		F8A952542A80CD5D004AEE5F /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952532A80CD5D004AEE5F /* UserInfoService.swift */; };
+		F8A952562A80CDD4004AEE5F /* UserNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952552A80CDD4004AEE5F /* UserNoteService.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -96,6 +98,8 @@
 
 /* Begin PBXFileReference section */
 		F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8A952532A80CD5D004AEE5F /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		F8A952552A80CDD4004AEE5F /* UserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteService.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				F8D88A2E2A80AA61005DB81B /* Data.h */,
+				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
+				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 					};
 					F8D88A2B2A80AA60005DB81B = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					F8D88A322A80AA61005DB81B = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -530,6 +537,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A952562A80CDD4004AEE5F /* UserNoteService.swift in Sources */,
+				F8A952542A80CD5D004AEE5F /* UserInfoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +887,7 @@
 		F8D88A422A80AA61005DB81B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -908,6 +918,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -918,6 +929,7 @@
 		F8D88A432A80AA61005DB81B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
