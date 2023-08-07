@@ -10,4 +10,5 @@ import Domain
 
 protocol UserInfoService {
     func createUser(userName: String) async throws -> UserInfo
+    func fetchUserInfo(userName: String) async throws -> UserInfo
 }
