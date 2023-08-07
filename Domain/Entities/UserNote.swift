@@ -10,4 +10,9 @@ import Foundation
 public struct UserNote {
     let id: String
     let content: String
+    
+    public init(id: String, content: String) {
+        self.id = id
+        self.content = content
+    }
 }
