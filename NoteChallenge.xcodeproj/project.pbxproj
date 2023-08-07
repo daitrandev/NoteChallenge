@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
-		F8A952542A80CD5D004AEE5F /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952532A80CD5D004AEE5F /* UserInfoService.swift */; };
-		F8A952562A80CDD4004AEE5F /* UserNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952552A80CDD4004AEE5F /* UserNoteService.swift */; };
 		F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */; };
 		F8A9525B2A80D285004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525A2A80D285004AEE5F /* FirebaseDatabase */; };
 		F8A9525D2A80D285004AEE5F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525C2A80D285004AEE5F /* FirebaseDatabaseSwift */; };
@@ -32,6 +30,8 @@
 		F8A952A12A814C0F004AEE5F /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A02A814C0F004AEE5F /* NoteListView.swift */; };
 		F8A952A32A814C6A004AEE5F /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A22A814C6A004AEE5F /* NoteListViewModel.swift */; };
 		F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A42A814F14004AEE5F /* NoteListRow.swift */; };
+		F8A952A72A81582D004AEE5F /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952532A80CD5D004AEE5F /* UserInfoService.swift */; };
+		F8A952A82A815831004AEE5F /* UserNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952552A80CDD4004AEE5F /* UserNoteService.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -264,8 +264,6 @@
 		F8A952692A81073A004AEE5F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
-				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
 				F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */,
 				F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */,
 			);
@@ -315,6 +313,15 @@
 				F8A952A42A814F14004AEE5F /* NoteListRow.swift */,
 			);
 			path = NoteList;
+			sourceTree = "<group>";
+		};
+		F8A952A62A815800004AEE5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
+				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F8D889AC2A809702005DB81B = {
@@ -370,6 +377,7 @@
 		F8D889EC2A809AC3005DB81B /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F8A952A62A815800004AEE5F /* Services */,
 				F8D88A1E2A809D2A005DB81B /* UseCases */,
 				F8D88A192A809CDB005DB81B /* Entities */,
 				F8D88A142A809CA9005DB81B /* Repositories */,
@@ -770,9 +778,11 @@
 			files = (
 				F8D88A182A809CCC005DB81B /* UserNotesRepository.swift in Sources */,
 				F8D88A242A809D67005DB81B /* UserNoteUseCase.swift in Sources */,
+				F8A952A72A81582D004AEE5F /* UserInfoService.swift in Sources */,
 				F8D88A1B2A809D0F005DB81B /* UserInfo.swift in Sources */,
 				F8D88A1D2A809D16005DB81B /* UserNote.swift in Sources */,
 				F8D88A552A80AD03005DB81B /* UserInfoRepository.swift in Sources */,
+				F8A952A82A815831004AEE5F /* UserNoteService.swift in Sources */,
 				F8D88A262A809FE0005DB81B /* UserInfoUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,9 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A952562A80CDD4004AEE5F /* UserNoteService.swift in Sources */,
 				F8A9529E2A813589004AEE5F /* Encodable+Ext.swift in Sources */,
-				F8A952542A80CD5D004AEE5F /* UserInfoService.swift in Sources */,
 				F8A952682A80EFDB004AEE5F /* UserNotesRepositoryImpl.swift in Sources */,
 				F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */,
 				F8A952662A80E9E9004AEE5F /* UserInfoRepositoryImpl.swift in Sources */,
