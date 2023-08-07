@@ -6,7 +6,6 @@
 //
 
 import Domain
-import Data
 import SwiftUI
 
 public struct LoginView<T: LoginViewModelType>: View {
@@ -44,7 +43,7 @@ public struct LoginView<T: LoginViewModelType>: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryImpl(service: UserInfoServiceMock()))))
+        LoginView(viewModel: LoginViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryMock())))
     }
 }
 
@@ -55,5 +54,15 @@ private class UserInfoServiceMock: UserInfoService {
     
     func fetchUserInfo(userName: String) async throws -> UserInfo {
         .init(userName: "", notes: [])
+    }
+}
+
+private class UserInfoRepositoryMock: UserInfoRepository {
+    func fetchUserInfo(userName: String) async throws -> Domain.UserInfo {
+        .init(userName: "1", notes: [])
+    }
+    
+    func createUser(userName: String) async throws -> Domain.UserInfo {
+        .init(userName: "1", notes: [])
     }
 }

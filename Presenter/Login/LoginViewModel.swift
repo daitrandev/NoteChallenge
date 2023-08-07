@@ -19,7 +19,6 @@ public final class LoginViewModel: LoginViewModelType {
     @Published public var userName: String = ""
     @Published public var showNoteList: Bool = false
     
-    
     public init(userInfoUseCase: UserInfoUseCase) {
         self.userInfoUseCase = userInfoUseCase
     }
