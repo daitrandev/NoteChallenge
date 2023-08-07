@@ -27,9 +27,13 @@ public final class LoginViewModel: LoginViewModelType {
     public func didTapLogin() async {
         do {
             _ = try await userInfoUseCase.createUser(userName: userName)
-            showNoteList = true
+            await MainActor.run {
+                showNoteList = true
+            }
         } catch {
-            showNoteList = false
+            await MainActor.run {
+                showNoteList = false
+            }
         }
     }
 }
