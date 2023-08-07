@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol UserNoteUseCase {
-    func create(userId: String, noteContent: String) async throws -> UserNote
-    func fetchUserNotes(userId: String) async throws -> [UserNote]
+    func createNote(userName: String, noteContent: String) async throws -> [UserNote]
+    func fetchNotes(userName: String) async throws -> [UserNote]
 }
 
 public final class UserNoteUseCaseImpl: UserNoteUseCase {
@@ -19,13 +19,13 @@ public final class UserNoteUseCaseImpl: UserNoteUseCase {
         self.userNoteRepository = userNoteRepository
     }
     
-    public func create(userId: String, noteContent: String) async throws -> UserNote {
-        let result = try await userNoteRepository.createUserNote(userId: userId, content: noteContent)
+    public func createNote(userName: String, noteContent: String) async throws -> [UserNote] {
+        let result = try await userNoteRepository.createNote(userName: userName, content: noteContent)
         return result
     }
     
-    public func fetchUserNotes(userId: String) async throws -> [UserNote] {
-        let result = try await userNoteRepository.fetchUserNote(userId: userId)
+    public func fetchNotes(userName: String) async throws -> [UserNote] {
+        let result = try await userNoteRepository.fetchNotes(userName: userName)
         return result
     }
 }
