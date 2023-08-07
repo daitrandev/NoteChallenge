@@ -10,7 +10,6 @@ import Data
 import SwiftUI
 
 public struct LoginView<T: LoginViewModelType>: View {
-    @State var username: String = ""
     @ObservedObject var viewModel: T
     
     public init(viewModel: T) {
@@ -18,18 +17,26 @@ public struct LoginView<T: LoginViewModelType>: View {
     }
     
     public var body: some View {
-        VStack(spacing: 10) {
-            Text("Input user name")
-            TextField("Username", text: $username)
-                .padding()
-                .frame(width: 300, height: 50)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.black, lineWidth: 1)
-                )
-            
-            Button("Login") {
-                viewModel.didTapLogin(userName: username)
+        NavigationView {
+            VStack(spacing: 10) {
+                NavigationLink(destination: Text("Note list"), isActive: $viewModel.showNoteList) {
+                    EmptyView()
+                }
+                
+                Text("Input user name")
+                TextField("Username", text: $viewModel.userName)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                
+                Button("Login") {
+                    Task {
+                        await viewModel.didTapLogin()
+                    }
+                }
             }
         }
     }
