@@ -28,6 +28,7 @@ struct NoteListView<T: NoteListViewModelType>: View {
                     }
                 }
             }
+            .navigationTitle("All Notes")
         }
     }
 }
