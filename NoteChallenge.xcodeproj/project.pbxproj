@@ -15,6 +15,7 @@
 		F8A9525D2A80D285004AEE5F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525C2A80D285004AEE5F /* FirebaseDatabaseSwift */; };
 		F8A9525F2A80D2C2004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525E2A80D2C2004AEE5F /* FirebaseDatabase */; };
 		F8A952612A80D2C2004AEE5F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8A952602A80D2C2004AEE5F /* FirebaseDatabaseSwift */; };
+		F8A952632A80D8DF004AEE5F /* FirebaseUserNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		F8A952532A80CD5D004AEE5F /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		F8A952552A80CDD4004AEE5F /* UserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteService.swift; sourceTree = "<group>"; };
 		F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserInfoService.swift; sourceTree = "<group>"; };
+		F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserNoteService.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				F8A952532A80CD5D004AEE5F /* UserInfoService.swift */,
 				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
 				F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */,
+				F8A952622A80D8DF004AEE5F /* FirebaseUserNoteService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				F8A952562A80CDD4004AEE5F /* UserNoteService.swift in Sources */,
 				F8A952542A80CD5D004AEE5F /* UserInfoService.swift in Sources */,
 				F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */,
+				F8A952632A80D8DF004AEE5F /* FirebaseUserNoteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
