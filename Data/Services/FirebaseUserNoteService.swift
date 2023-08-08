@@ -61,7 +61,8 @@ public final class FirebaseUserNoteService: UserNoteService {
     
     private func saveNotes(notes: [UserNote], userName: String) async throws -> [UserNote] {
         do {
-            try await databaseRef.child(userName).child("notes").setValue(notes)
+            let noteDictionaries = notes.compactMap { $0.dict }
+            try await databaseRef.child(userName).child("notes").setValue(noteDictionaries)
             return notes
         } catch {
            throw error
