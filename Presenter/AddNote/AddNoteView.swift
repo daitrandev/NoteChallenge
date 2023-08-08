@@ -33,7 +33,12 @@ public struct AddNoteView<T: AddNoteViewModelType>: View {
         .toolbar {
             Button("Done") {
                 Task {
-                    await viewModel.createNote(userName: loggedInUser.userName)
+                    do {
+                        let notes = try await viewModel.createNote(userName: loggedInUser.userName)
+                        loggedInUser.notes = notes
+                    } catch {
+                        debugPrint(error.localizedDescription)
+                    }
                     await MainActor.run {
                         presentationMode.wrappedValue.dismiss()
                     }

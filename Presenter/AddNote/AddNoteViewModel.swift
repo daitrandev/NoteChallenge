@@ -10,7 +10,7 @@ import Foundation
 
 public protocol AddNoteViewModelType: ObservableObject {
     var note: String { get set }
-    func createNote(userName: String) async
+    func createNote(userName: String) async throws -> [UserNote]
 }
 
 public final class AddNoteViewModel: AddNoteViewModelType {
@@ -22,11 +22,11 @@ public final class AddNoteViewModel: AddNoteViewModelType {
         self.userNoteUseCase = userNoteUseCase
     }
     
-    public func createNote(userName: String) async {
+    public func createNote(userName: String) async throws -> [UserNote] {
         do {
-            _ = try await userNoteUseCase.createNote(userName: userName, noteContent: note)
+            return try await userNoteUseCase.createNote(userName: userName, noteContent: note)
         } catch {
-            debugPrint(error.localizedDescription)
+            throw error
         }
     }
 }
