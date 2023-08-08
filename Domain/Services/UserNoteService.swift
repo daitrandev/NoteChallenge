@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Domain
 
 public protocol UserNoteService {
     func createNote(userName: String, noteContent: String) async throws -> [UserNote]

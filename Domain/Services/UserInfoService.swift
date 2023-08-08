@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Domain
 
 public protocol UserInfoService {
     func createUser(userName: String) async throws -> UserInfo
