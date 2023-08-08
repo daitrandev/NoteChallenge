@@ -23,30 +23,31 @@ public struct NoteListView<T: NoteListViewModelType, V: View>: View {
     
     public var body: some View {
         NavigationLink(
-            destination: addNoteView()
-                .environmentObject(loggedInUser),
+            destination:
+                ZStack {
+                    if isShowingAddNote {
+                        addNoteView().environmentObject(loggedInUser)
+                    }
+                }
+            ,
             isActive: $isShowingAddNote) {
                 EmptyView()
             }
-        
-        List($viewModel.notes, id: \.id) {
-            NoteListRow(note: $0.wrappedValue)
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowingAddNote = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingAddNote = true
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                    }
                 }
             }
-        }
-        .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("All Notes")
-        .onAppear {
-            Task {
-                if !loggedInUser.userName.isEmpty {
-                    await viewModel.fetchNotes(userName: loggedInUser.userName)
-                }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("All Notes")
+        
+        if !loggedInUser.notes.isEmpty {
+            List(loggedInUser.notes, id: \.id) {
+                NoteListRow(note: $0)
             }
         }
     }
