@@ -15,4 +15,9 @@ public struct UserInfo: Codable {
         self.userName = userName
         self.notes = notes
     }
+    
+    public init() {
+        self.userName = ""
+        self.notes = []
+    }
 }
