@@ -11,7 +11,6 @@ import SwiftUI
 public struct LoginView<T: LoginViewModelType, V: View>: View {
     private let loggedInView: (() -> V)
     
-    @EnvironmentObject var loggedInUser: UserInfoEnv
     @ObservedObject var viewModel: T
     
     public init(viewModel: T, loggedInView: @escaping (() -> V)) {
