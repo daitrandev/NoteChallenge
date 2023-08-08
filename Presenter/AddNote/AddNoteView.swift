@@ -10,6 +10,7 @@ import SwiftUI
 
 public struct AddNoteView<T: AddNoteViewModelType>: View {
     @ObservedObject var viewModel: T
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var loggedInUser: UserInfoEnv
     
     public init(viewModel: T) {
@@ -33,6 +34,9 @@ public struct AddNoteView<T: AddNoteViewModelType>: View {
             Button("Done") {
                 Task {
                     await viewModel.createNote(userName: loggedInUser.userName)
+                    await MainActor.run {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
         }
