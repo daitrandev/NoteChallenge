@@ -18,6 +18,10 @@ public final class FirebaseUserNoteService: UserNoteService {
     }
     
     public func createNote(userName: String, noteContent: String) async throws -> [UserNote] {
+        if noteContent.isEmpty {
+            throw NSError(domain: "Can't save an empty note", code: 0)
+        }
+        
         var notes = try await fetchNotes(userName: userName)
         let newNote = UserNote(id: String(notes.count + 1), content: noteContent)
         notes.append(newNote)
