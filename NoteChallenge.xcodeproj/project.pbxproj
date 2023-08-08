@@ -37,7 +37,6 @@
 		F8A952B02A81BDED004AEE5F /* UserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952AF2A81BDED004AEE5F /* UserInfoKey.swift */; };
 		F8A952B42A81E26F004AEE5F /* UserInfoEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952B32A81E26F004AEE5F /* UserInfoEnv.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
-		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
 		F8D889C02A809703005DB81B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BF2A809703005DB81B /* Preview Assets.xcassets */; };
 		F8D889FB2A809AC3005DB81B /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D889ED2A809AC3005DB81B /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -173,7 +172,6 @@
 		F8A952B32A81E26F004AEE5F /* UserInfoEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEnv.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
-		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8D889BC2A809703005DB81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8D889BF2A809703005DB81B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8D889EB2A809AC3005DB81B /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,7 +384,6 @@
 			children = (
 				F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */,
 				F8D889B82A809702005DB81B /* NoteChallengeApp.swift */,
-				F8D889BA2A809702005DB81B /* ContentView.swift */,
 				F8D889BC2A809703005DB81B /* Assets.xcassets */,
 				F8D889BE2A809703005DB81B /* Preview Content */,
 				F8D88A562A80ADC9005DB81B /* AppDelegate.swift */,
@@ -799,7 +796,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D88A572A80ADC9005DB81B /* AppDelegate.swift in Sources */,
-				F8D889BB2A809702005DB81B /* ContentView.swift in Sources */,
 				F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
