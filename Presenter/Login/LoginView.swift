@@ -23,11 +23,14 @@ public struct LoginView<T: LoginViewModelType, V: View>: View {
         NavigationView {
             VStack(spacing: 10) {
                 NavigationLink(
-                    destination: loggedInView()
-                        .environmentObject(viewModel.loggedInUser),
+                    destination: ZStack {
+                        if viewModel.showNoteList {
+                            loggedInView().environmentObject(viewModel.loggedInUser)
+                        }
+                    },
                     isActive: $viewModel.showNoteList) {
-                    EmptyView()
-                }
+                        EmptyView()
+                    }
                 
                 Text("Input user name")
                 TextField("Username", text: $viewModel.userName)
