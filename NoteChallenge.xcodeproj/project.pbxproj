@@ -32,6 +32,9 @@
 		F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952A42A814F14004AEE5F /* NoteListRow.swift */; };
 		F8A952A72A81582D004AEE5F /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952532A80CD5D004AEE5F /* UserInfoService.swift */; };
 		F8A952A82A815831004AEE5F /* UserNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952552A80CDD4004AEE5F /* UserNoteService.swift */; };
+		F8A952AB2A815EEE004AEE5F /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952AA2A815EEE004AEE5F /* AddNoteView.swift */; };
+		F8A952AD2A8165F9004AEE5F /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952AC2A8165F9004AEE5F /* AddNoteViewModel.swift */; };
+		F8A952B02A81BDED004AEE5F /* UserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952AF2A81BDED004AEE5F /* UserInfoKey.swift */; };
 		F8D889B92A809702005DB81B /* NoteChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889B82A809702005DB81B /* NoteChallengeApp.swift */; };
 		F8D889BB2A809702005DB81B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D889BA2A809702005DB81B /* ContentView.swift */; };
 		F8D889BD2A809703005DB81B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D889BC2A809703005DB81B /* Assets.xcassets */; };
@@ -163,6 +166,9 @@
 		F8A952A02A814C0F004AEE5F /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		F8A952A22A814C6A004AEE5F /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		F8A952A42A814F14004AEE5F /* NoteListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRow.swift; sourceTree = "<group>"; };
+		F8A952AA2A815EEE004AEE5F /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		F8A952AC2A8165F9004AEE5F /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		F8A952AF2A81BDED004AEE5F /* UserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoKey.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BA2A809702005DB81B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 		F8A952702A810789004AEE5F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F8A952AE2A81BD85004AEE5F /* Environments */,
+				F8A952A92A815E95004AEE5F /* AddNote */,
 				F8A9529F2A8148F2004AEE5F /* NoteList */,
 				F8A9528A2A810809004AEE5F /* Login */,
 				F8A952712A810789004AEE5F /* Presenter.h */,
@@ -322,6 +330,23 @@
 				F8A952552A80CDD4004AEE5F /* UserNoteService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F8A952A92A815E95004AEE5F /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952AA2A815EEE004AEE5F /* AddNoteView.swift */,
+				F8A952AC2A8165F9004AEE5F /* AddNoteViewModel.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		F8A952AE2A81BD85004AEE5F /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952AF2A81BDED004AEE5F /* UserInfoKey.swift */,
+			);
+			path = Environments;
 			sourceTree = "<group>";
 		};
 		F8D889AC2A809702005DB81B = {
@@ -746,6 +771,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A952B02A81BDED004AEE5F /* UserInfoKey.swift in Sources */,
+				F8A952AD2A8165F9004AEE5F /* AddNoteViewModel.swift in Sources */,
+				F8A952AB2A815EEE004AEE5F /* AddNoteView.swift in Sources */,
 				F8A952A32A814C6A004AEE5F /* NoteListViewModel.swift in Sources */,
 				F8A9528E2A810D8B004AEE5F /* LoginViewModel.swift in Sources */,
 				F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */,
