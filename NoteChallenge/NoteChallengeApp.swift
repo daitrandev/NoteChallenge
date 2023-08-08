@@ -14,6 +14,7 @@ import FirebaseDatabaseSwift
 
 @main
 struct NoteChallengeApp: App {
+    @Environment(\.userInfo) var userInfo: UserInfo?
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
@@ -25,7 +26,17 @@ struct NoteChallengeApp: App {
                             service: FirebaseUserInfoService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
                         )
                     )
-                )
+                ), loggedInView: {
+                    NoteListView(
+                        viewModel: NoteListViewModel(
+                            userNoteUseCase: UserNoteUseCaseImpl(
+                                userNoteRepository: UserNotesRepositoryImpl(
+                                    userNoteService: FirebaseUserNoteService(
+                                        databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference()))),
+                            userInfo: userInfo ?? UserInfo()
+                        )
+                    )
+                }
             )
         }
     }

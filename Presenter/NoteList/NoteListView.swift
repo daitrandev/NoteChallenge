@@ -8,14 +8,14 @@
 import Domain
 import SwiftUI
 
-struct NoteListView<T: NoteListViewModelType>: View {
+public struct NoteListView<T: NoteListViewModelType>: View {
     @ObservedObject var viewModel: T
     
     public init(viewModel: T) {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             List(viewModel.notes, id: \.id) {
                 NoteListRow(note: $0)
@@ -30,6 +30,11 @@ struct NoteListView<T: NoteListViewModelType>: View {
             }
             .navigationTitle("All Notes")
         }
+        .onAppear {
+            Task {
+                viewModel.fetchNotes
+            }
+        }
     }
 }
 
@@ -40,7 +45,7 @@ struct NoteListView_Previews: PreviewProvider {
                 userNoteUseCase: UserNoteUseCaseImpl(
                     userNoteRepository: UserNoteRepositoryMock()
                 ),
-                userInfo: UserInfo(userName: "Hello", notes: [])
+                userInfo: .init()
             )
         )
     }

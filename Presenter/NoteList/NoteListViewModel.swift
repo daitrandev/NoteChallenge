@@ -10,23 +10,20 @@ import Foundation
 
 public protocol NoteListViewModelType: ObservableObject {
     var notes: [UserNote] { get set }
+    func fetchNotes() async
 }
 
-final class NoteListViewModel: NoteListViewModelType {
+public final class NoteListViewModel: NoteListViewModelType {
     private let userNoteUseCase: UserNoteUseCase
     private let userInfo: UserInfo
-    @Published var notes: [Domain.UserNote] = []
+    @Published public var notes: [UserNote] = []
     
-    init(userNoteUseCase: UserNoteUseCase, userInfo: UserInfo) {
-        self.userInfo = userInfo
+    public init(userNoteUseCase: UserNoteUseCase, userInfo: UserInfo) {
         self.userNoteUseCase = userNoteUseCase
-        
-        Task {
-            await fetchNotes()
-        }
+        self.userInfo = userInfo
     }
     
-    private func fetchNotes() async {
+    public func fetchNotes() async {
         do {
             let notes = try await userNoteUseCase.fetchNotes(userName: userInfo.userName)
             await MainActor.run {

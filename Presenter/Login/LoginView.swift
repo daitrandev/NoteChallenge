@@ -8,17 +8,20 @@
 import Domain
 import SwiftUI
 
-public struct LoginView<T: LoginViewModelType>: View {
+public struct LoginView<T: LoginViewModelType, N: View>: View {
+    @ViewBuilder let loggedInView: (() -> N)
     @ObservedObject var viewModel: T
     
-    public init(viewModel: T) {
+    public init(viewModel: T, loggedInView: @escaping (() -> N)) {
         self.viewModel = viewModel
+        self.loggedInView = loggedInView
     }
     
     public var body: some View {
         NavigationView {
             VStack(spacing: 10) {
-                NavigationLink(destination: Text("Note list"), isActive: $viewModel.showNoteList) {
+                NavigationLink(destination: loggedInView(),
+                               isActive: $viewModel.showNoteList) {
                     EmptyView()
                 }
                 
@@ -43,7 +46,15 @@ public struct LoginView<T: LoginViewModelType>: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryMock())))
+        LoginView(
+            viewModel: LoginViewModel(
+                userInfoUseCase: UserInfoUseCaseImpl(
+                    userInfoRepository: UserInfoRepositoryMock()
+                )
+            ), loggedInView: {
+                EmptyView()
+            }
+        )
     }
 }
 
@@ -58,11 +69,11 @@ private class UserInfoServiceMock: UserInfoService {
 }
 
 private class UserInfoRepositoryMock: UserInfoRepository {
-    func fetchUserInfo(userName: String) async throws -> Domain.UserInfo {
+    func fetchUserInfo(userName: String) async throws -> UserInfo {
         .init(userName: "1", notes: [])
     }
     
-    func createUser(userName: String) async throws -> Domain.UserInfo {
+    func createUser(userName: String) async throws -> UserInfo {
         .init(userName: "1", notes: [])
     }
 }
