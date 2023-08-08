@@ -18,11 +18,15 @@ public final class FirebaseUserInfoService: UserInfoService {
     }
     
     public func createUser(userName: String) async throws -> UserInfo {
-        guard let dictionary = UserInfo(userName: userName, notes: []).dict else {
+        if let existingUser = try? await fetchUserInfo(userName: userName) {
+            return existingUser
+        }
+        let newUser = UserInfo(userName: userName, notes: [])
+        guard let dictionary = newUser.dict else {
             throw NSError(domain: "Cannot parse userInfo", code: 0)
         }
         try await databaseRef.child(userName).setValue(dictionary)
-        return UserInfo(userName: userName, notes: [])
+        return newUser
     }
     
     public func fetchUserInfo(userName: String) async throws -> UserInfo {
