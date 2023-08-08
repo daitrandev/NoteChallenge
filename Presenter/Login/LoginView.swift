@@ -51,6 +51,8 @@ public struct LoginView<T: LoginViewModelType, V: View>: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Log In")
         }
     }
 }
