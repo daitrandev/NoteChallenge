@@ -45,8 +45,12 @@ public final class FirebaseUserNoteService: UserNoteService {
     public func fetchNotes(userName: String) async throws -> [UserNote] {
         try await withCheckedThrowingContinuation { continuation in
             databaseRef.child(userName).child("notes").getData { error, snapshot in
-                guard error == nil, let dictionaries = snapshot?.value as? [NSDictionary] else {
-                    continuation.resume(throwing: NSError(domain: "Fetch note error", code: 0))
+                if let error {
+                    continuation.resume(throwing: error)
+                }
+                
+                guard let dictionaries = snapshot?.value as? [NSDictionary] else {
+                    continuation.resume(returning: [])
                     return
                 }
                 let notes = dictionaries.compactMap { UserNote(dictionary: $0) }
