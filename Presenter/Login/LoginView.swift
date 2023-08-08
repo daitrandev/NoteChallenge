@@ -8,11 +8,13 @@
 import Domain
 import SwiftUI
 
-public struct LoginView<T: LoginViewModelType, N: View>: View {
-    @ViewBuilder let loggedInView: (() -> N)
+public struct LoginView<T: LoginViewModelType, V: View>: View {
+    private let loggedInView: (() -> V)
+    
+    @EnvironmentObject var loggedInUser: UserInfoEnv
     @ObservedObject var viewModel: T
     
-    public init(viewModel: T, loggedInView: @escaping (() -> N)) {
+    public init(viewModel: T, loggedInView: @escaping (() -> V)) {
         self.viewModel = viewModel
         self.loggedInView = loggedInView
     }
@@ -20,8 +22,10 @@ public struct LoginView<T: LoginViewModelType, N: View>: View {
     public var body: some View {
         NavigationView {
             VStack(spacing: 10) {
-                NavigationLink(destination: loggedInView(),
-                               isActive: $viewModel.showNoteList) {
+                NavigationLink(
+                    destination: loggedInView()
+                        .environmentObject(viewModel.loggedInUser),
+                    isActive: $viewModel.showNoteList) {
                     EmptyView()
                 }
                 
@@ -36,7 +40,11 @@ public struct LoginView<T: LoginViewModelType, N: View>: View {
                 
                 Button("Login") {
                     Task {
-                        await viewModel.didTapLogin()
+                        do {
+                            try await viewModel.didTapLogin()
+                        } catch {
+                            debugPrint(error.localizedDescription)
+                        }
                     }
                 }
             }

@@ -11,21 +11,24 @@ import Foundation
 public protocol LoginViewModelType: ObservableObject {
     var userName: String { get set }
     var showNoteList: Bool { get set }
-    func didTapLogin() async
+    var loggedInUser: UserInfoEnv { get set }
+    func didTapLogin() async throws
 }
 
 public final class LoginViewModel: LoginViewModelType {
     private let userInfoUseCase: UserInfoUseCase
     @Published public var userName: String = ""
     @Published public var showNoteList: Bool = false
+    public var loggedInUser: UserInfoEnv = .init()
     
     public init(userInfoUseCase: UserInfoUseCase) {
         self.userInfoUseCase = userInfoUseCase
     }
     
-    public func didTapLogin() async {
+    public func didTapLogin() async throws {
         do {
-            _ = try await userInfoUseCase.createUser(userName: userName)
+            let userInfo = try await userInfoUseCase.createUser(userName: userName)
+            loggedInUser = UserInfoEnv(userInfo: userInfo)
             await MainActor.run {
                 showNoteList = true
             }
@@ -33,6 +36,7 @@ public final class LoginViewModel: LoginViewModelType {
             await MainActor.run {
                 showNoteList = false
             }
+            throw error
         }
     }
 }
