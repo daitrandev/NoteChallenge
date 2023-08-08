@@ -8,31 +8,38 @@
 import Domain
 import SwiftUI
 
-public struct NoteListView<T: NoteListViewModelType>: View {
+public struct NoteListView<T: NoteListViewModelType, V: View>: View {
+    private let addNoteView: (() -> V)
+    
+    @EnvironmentObject var loggedInUser: UserInfoEnv
     @ObservedObject var viewModel: T
     
-    public init(viewModel: T) {
+    public init(viewModel: T, addNoteView: @escaping (() -> V)) {
         self.viewModel = viewModel
+        self.addNoteView = addNoteView
     }
     
     public var body: some View {
-        NavigationView {
-            List(viewModel.notes, id: \.id) {
-                NoteListRow(note: $0)
-            }.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        print("Edit button was tapped")
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                    }
+        List($viewModel.notes, id: \.id) {
+            NoteListRow(note: $0.wrappedValue)
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink {
+                    addNoteView()
+                        .environmentObject(loggedInUser)
+                } label: {
+                    Image(systemName: "plus.circle.fill")
                 }
             }
-            .navigationTitle("All Notes")
+            
         }
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle("All Notes")
         .onAppear {
             Task {
-                viewModel.fetchNotes
+                if !loggedInUser.userName.isEmpty {
+                    await viewModel.fetchNotes(userName: loggedInUser.userName)
+                }
             }
         }
     }
@@ -44,9 +51,11 @@ struct NoteListView_Previews: PreviewProvider {
             viewModel: NoteListViewModel(
                 userNoteUseCase: UserNoteUseCaseImpl(
                     userNoteRepository: UserNoteRepositoryMock()
-                ),
-                userInfo: .init()
-            )
+                )
+            ),
+            addNoteView: {
+                EmptyView()
+            }
         )
     }
 }
