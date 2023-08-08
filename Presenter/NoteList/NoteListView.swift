@@ -11,6 +11,8 @@ import SwiftUI
 public struct NoteListView<T: NoteListViewModelType, V: View>: View {
     private let addNoteView: (() -> V)
     
+    @State private var isShowingAddNote: Bool = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var loggedInUser: UserInfoEnv
     @ObservedObject var viewModel: T
     
@@ -20,18 +22,23 @@ public struct NoteListView<T: NoteListViewModelType, V: View>: View {
     }
     
     public var body: some View {
+        NavigationLink(
+            destination: addNoteView()
+                .environmentObject(loggedInUser),
+            isActive: $isShowingAddNote) {
+                EmptyView()
+            }
+        
         List($viewModel.notes, id: \.id) {
             NoteListRow(note: $0.wrappedValue)
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink {
-                    addNoteView()
-                        .environmentObject(loggedInUser)
+                Button {
+                    isShowingAddNote = true
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
             }
-            
         }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("All Notes")
