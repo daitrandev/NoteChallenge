@@ -11,9 +11,13 @@ import Domain
 
 final class LoginVMTests: XCTestCase {
     func test_loggin() {
-        let creatingUserInfo = UserInfo(userName: "Hello", notes: [])
-        let vm = LoginViewModel(userInfoUseCase: UserInfoUseCaseMock(userInfo: creatingUserInfo))
+        // Given
+        let addingUser = UserInfo(userName: "Xin Chao", notes: [])
+        let vm = LoginViewModel(userInfoUseCase: UserInfoUseCaseMock(users: []))
+        vm.userName = addingUser.userName
         let expectation = expectation(description: "Test User Login")
+        
+        //When
         Task {
             do {
                 try await vm.didTapLogin()
@@ -23,22 +27,8 @@ final class LoginVMTests: XCTestCase {
             }
         }
         waitForExpectations(timeout: 5)
-        XCTAssertEqual(vm.loggedInUser, UserInfoEnv(userInfo: creatingUserInfo))
-    }
-}
-
-private class UserInfoUseCaseMock: UserInfoUseCase {
-    private let userInfo: UserInfo
-    
-    init(userInfo: UserInfo) {
-        self.userInfo = userInfo
-    }
-    
-    func fetchAllUsers() async throws -> [UserInfo] {
-        []
-    }
-    
-    func createUser(userName: String) async throws -> UserInfo {
-        userInfo
+        
+        // Then
+        XCTAssertEqual(vm.loggedInUser.userName, vm.userName)
     }
 }
