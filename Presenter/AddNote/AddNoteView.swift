@@ -9,12 +9,13 @@ import Domain
 import SwiftUI
 
 public struct AddNoteView<T: AddNoteViewModelType>: View {
+    private let didAddNote: (UserNote?) -> Void
     @ObservedObject var viewModel: T
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var loggedInUser: UserInfoEnv
     
-    public init(viewModel: T) {
+    public init(viewModel: T, didAddNote: @escaping (UserNote?) -> Void) {
         self.viewModel = viewModel
+        self.didAddNote = didAddNote
     }
     
     public var body: some View {
@@ -36,11 +37,9 @@ public struct AddNoteView<T: AddNoteViewModelType>: View {
                     do {
                         let notes = try await viewModel.createNote(userName: loggedInUser.userName)
                         loggedInUser.notes = notes
+                        didAddNote(notes.last)
                     } catch {
                         debugPrint(error.localizedDescription)
-                    }
-                    await MainActor.run {
-                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
@@ -50,7 +49,7 @@ public struct AddNoteView<T: AddNoteViewModelType>: View {
 
 struct AddNote_Previews: PreviewProvider {
     static var previews: some View {
-        AddNoteView(viewModel: AddNoteViewModel(userNoteUseCase: UserNoteUseCaseImpl(userNoteRepository: UserNoteRepositoryMock())))
+        AddNoteView(viewModel: AddNoteViewModel(userNoteUseCase: UserNoteUseCaseImpl(userNoteRepository: UserNoteRepositoryMock())), didAddNote: { _ in })
     }
 }
 
