@@ -27,3 +27,9 @@ public final class UserInfoEnv: ObservableObject {
         notes = []
     }
 }
+
+extension UserInfoEnv: Equatable {
+    public static func == (lhs: UserInfoEnv, rhs: UserInfoEnv) -> Bool {
+        lhs.userName == rhs.userName && lhs.notes == rhs.notes
+    }
+}
