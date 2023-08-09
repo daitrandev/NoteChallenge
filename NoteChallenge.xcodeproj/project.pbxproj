@@ -13,6 +13,10 @@
 		F8A70ABC2A839A87008ABCF1 /* FirebaseDatabaseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */; };
 		F8A70ABE2A839CEA008ABCF1 /* NoteListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */; };
 		F8A70AE02A83A481008ABCF1 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70ADF2A83A481008ABCF1 /* LoginVMTests.swift */; };
+		F8A70AE22A83A7EE008ABCF1 /* AddNoteVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE12A83A7EE008ABCF1 /* AddNoteVMTests.swift */; };
+		F8A70AE62A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE52A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift */; };
+		F8A70AE82A83D8E6008ABCF1 /* AllNotesVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE72A83D8E6008ABCF1 /* AllNotesVMTests.swift */; };
+		F8A70AEA2A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE92A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift */; };
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
 		F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */; };
 		F8A9525B2A80D285004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525A2A80D285004AEE5F /* FirebaseDatabase */; };
@@ -157,6 +161,10 @@
 		F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseKey.swift; sourceTree = "<group>"; };
 		F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListVMTests.swift; sourceTree = "<group>"; };
 		F8A70ADF2A83A481008ABCF1 /* LoginVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTests.swift; sourceTree = "<group>"; };
+		F8A70AE12A83A7EE008ABCF1 /* AddNoteVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteVMTests.swift; sourceTree = "<group>"; };
+		F8A70AE52A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteUseCaseMock.swift; sourceTree = "<group>"; };
+		F8A70AE72A83D8E6008ABCF1 /* AllNotesVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesVMTests.swift; sourceTree = "<group>"; };
+		F8A70AE92A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseMock.swift; sourceTree = "<group>"; };
 		F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8A952532A80CD5D004AEE5F /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		F8A952552A80CDD4004AEE5F /* UserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteService.swift; sourceTree = "<group>"; };
@@ -274,6 +282,15 @@
 			path = FirebaseService;
 			sourceTree = "<group>";
 		};
+		F8A70AEB2A83DD1C008ABCF1 /* UseCaseMocks */ = {
+			isa = PBXGroup;
+			children = (
+				F8A70AE52A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift */,
+				F8A70AE92A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift */,
+			);
+			path = UseCaseMocks;
+			sourceTree = "<group>";
+		};
 		F8A952642A80E9DB004AEE5F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,8 +325,11 @@
 		F8A9527C2A810789004AEE5F /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8A70AEB2A83DD1C008ABCF1 /* UseCaseMocks */,
 				F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */,
 				F8A70ADF2A83A481008ABCF1 /* LoginVMTests.swift */,
+				F8A70AE12A83A7EE008ABCF1 /* AddNoteVMTests.swift */,
+				F8A70AE72A83D8E6008ABCF1 /* AllNotesVMTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -815,7 +835,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A70AE62A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift in Sources */,
+				F8A70AE22A83A7EE008ABCF1 /* AddNoteVMTests.swift in Sources */,
+				F8A70AEA2A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift in Sources */,
 				F8A70AE02A83A481008ABCF1 /* LoginVMTests.swift in Sources */,
+				F8A70AE82A83D8E6008ABCF1 /* AllNotesVMTests.swift in Sources */,
 				F8A70ABE2A839CEA008ABCF1 /* NoteListVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

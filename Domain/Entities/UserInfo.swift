@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserInfo: Codable {
+public struct UserInfo: Codable, Equatable {
     public let userName: String
     public let notes: [UserNote]
     
