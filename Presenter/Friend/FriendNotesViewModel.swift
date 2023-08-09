@@ -10,45 +10,28 @@ import Combine
 import Foundation
 
 public protocol FriendNotesViewModelType: ObservableObject {
-    var notes: [UserNote] { get set }
-    var username: String { get set }
-    func fetchUserNotes() async
+    var users: [UserInfo] { get set }
+    func fetchUsers() async
 }
 
 public final class FriendNotesViewModel: FriendNotesViewModelType {
-    private let userNoteUseCase: UserNoteUseCase
-    @Published public var notes: [UserNote] = []
-    @Published public var username: String = ""
+    private let userInfoUseCase: UserInfoUseCase
+    @Published public var users: [UserInfo] = []
     
     private var subscriptions = Set<AnyCancellable>()
     
-    public init(userNoteUseCase: UserNoteUseCase) {
-        self.userNoteUseCase = userNoteUseCase
-        
-        setupObservation()
+    public init(userInfoUseCase: UserInfoUseCase) {
+        self.userInfoUseCase = userInfoUseCase
     }
     
-    public func fetchUserNotes() async {
+    public func fetchUsers() async {
         do {
-            let fetchNotes = try await userNoteUseCase.fetchNotes(userName: username)
+            let fetchedUsers = try await userInfoUseCase.fetchAllUsers()
             await MainActor.run {
-                notes = fetchNotes
+                users = fetchedUsers
             }
         } catch {
             debugPrint(error.localizedDescription)
         }
-    }
-    
-    private func setupObservation() {
-        $username
-            .debounce(for: .seconds(1), scheduler: RunLoop.main)
-            .drop(while: { $0.isEmpty })
-            .sink(receiveValue: { [weak self] value in
-                let fetchUserNote = self?.fetchUserNotes
-                Task {
-                    await fetchUserNote?()
-                }
-            })
-            .store(in: &subscriptions)
     }
 }

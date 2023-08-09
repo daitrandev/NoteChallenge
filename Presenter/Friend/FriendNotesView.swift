@@ -16,52 +16,45 @@ public struct FriendNotesView<T: FriendNotesViewModelType>: View {
     }
     
     public var body: some View {
-        VStack {
-            TextField("Searching Username", text: $viewModel.username)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.black, lineWidth: 1)
-                )
-            
-            if viewModel.notes.isEmpty {
-                Spacer()
-                Text("Empty notes")
-                Spacer()
-            } else {
-                List(viewModel.notes, id: \.id) { note in
-                    NoteListRow(note: note)
+        NavigationView {
+            VStack {
+                List(viewModel.users, id: \.userName) { user in
+                    Section {
+                        ForEach(user.notes, id: \.id) { note in
+                            NoteListRow(note: note)
+                        }
+                    } header: {
+                        Text(user.userName)
+                    }
+                }
+            }
+            .navigationTitle("All notes")
+            .navigationBarTitleDisplayMode(.large)
+            .onAppear {
+                Task {
+                    await viewModel.fetchUsers()
                 }
             }
         }
-        .navigationTitle("Watch friend notes")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 
 struct FriendNote_Previews: PreviewProvider {
     static var previews: some View {
-        FriendNotesView(viewModel: FriendNotesViewModel(userNoteUseCase: UserNoteUseCaseImpl(userNoteRepository: UserNoteRepositoryMock())))
+        FriendNotesView(viewModel: FriendNotesViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryMock())))
     }
 }
 
-private class UserNoteRepositoryMock: UserNotesRepository {
-    func createNote(userName: String, content: String) async throws -> [UserNote] {
+private class UserInfoRepositoryMock: UserInfoRepository {
+    func fetchAllUsers() async throws -> [Domain.UserInfo] {
         []
     }
     
-    func updateNote(userName: String, note: UserNote) async throws -> [UserNote] {
-        []
+    func fetchUserInfo(userName: String) async throws -> UserInfo {
+        .init()
     }
     
-    func fetchNotes(userName: String) async throws -> [UserNote] {
-        [
-            .init(id: "1", content: "Hello"),
-            .init(id: "2", content: "World"),
-        ]
-    }
-    
-    func deleteNote(userName: String, note: UserNote) async throws -> [UserNote] {
-        []
+    func createUser(userName: String) async throws -> UserInfo {
+        .init()
     }
 }
