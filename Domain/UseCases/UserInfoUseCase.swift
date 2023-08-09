@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol UserInfoUseCase {
+    func fetchAllUsers() async throws -> [UserInfo]
     func createUser(userName: String) async throws -> UserInfo
 }
 
@@ -20,6 +21,11 @@ public final class UserInfoUseCaseImpl: UserInfoUseCase {
     
     public func createUser(userName: String) async throws -> UserInfo {
         let result = try await userInfoRepository.createUser(userName: userName)
+        return result
+    }
+    
+    public func fetchAllUsers() async throws -> [UserInfo] {
+        let result = try await userInfoRepository.fetchAllUsers()
         return result
     }
 }

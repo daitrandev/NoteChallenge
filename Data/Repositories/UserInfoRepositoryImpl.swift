@@ -22,4 +22,8 @@ public final class UserInfoRepositoryImpl: UserInfoRepository {
     public func createUser(userName: String) async throws -> UserInfo {
         try await service.createUser(userName: userName)
     }
+    
+    public func fetchAllUsers() async throws -> [UserInfo] {
+        try await service.fetchAllUsers()
+    }
 }

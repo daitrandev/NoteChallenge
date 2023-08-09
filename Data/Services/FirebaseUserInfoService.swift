@@ -29,6 +29,35 @@ public final class FirebaseUserInfoService: UserInfoService {
         return newUser
     }
     
+    public func fetchAllUsers() async throws -> [UserInfo] {
+        try await withCheckedThrowingContinuation { continuation in
+            databaseRef.getData { error, snapshot in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                }
+                
+                guard
+                    let dictionary = snapshot?.value as? NSDictionary,
+                    let allKeys = dictionary.allKeys as? [String] else {
+                    continuation.resume(throwing: NSError(domain: "Data not found", code: 0))
+                    return
+                }
+                let users = allKeys
+                    .compactMap { dictionary[$0] as? NSDictionary }
+                    .compactMap {
+                        do {
+                            let jsonData = try JSONSerialization.data(withJSONObject: $0)
+                            let userInfo = try JSONDecoder().decode(UserInfo.self, from: jsonData)
+                            return userInfo
+                        } catch {
+                            return nil
+                        }
+                    }
+                continuation.resume(returning: users)
+            }
+        }
+    }
+    
     public func fetchUserInfo(userName: String) async throws -> UserInfo {
         try await withCheckedThrowingContinuation { continuation in
             databaseRef.child(userName).getData { error, snapshot in
