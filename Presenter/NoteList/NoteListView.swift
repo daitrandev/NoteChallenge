@@ -8,9 +8,8 @@
 import Domain
 import SwiftUI
 
-public struct NoteListView<T: NoteListViewModelType, V: View, N: View>: View {
+public struct NoteListView<T: NoteListViewModelType, V: View>: View {
     private let addNoteView: (() -> V)
-    private let friendNotesView: (() -> N)
     
     @State private var isShowingAddNote: Bool = false
     @State private var isShowingFriendNotes: Bool = false
@@ -19,56 +18,34 @@ public struct NoteListView<T: NoteListViewModelType, V: View, N: View>: View {
     @ObservedObject var viewModel: T
     
     public init(viewModel: T,
-                addNoteView: @escaping (() -> V),
-                friendNotesView: @escaping (() -> N)) {
+                addNoteView: @escaping (() -> V)) {
         self.viewModel = viewModel
         self.addNoteView = addNoteView
-        self.friendNotesView = friendNotesView
     }
     
     public var body: some View {
-        NavigationLink(
-            destination:
-                ZStack {
-                    if isShowingAddNote {
-                        addNoteView().environmentObject(loggedInUser)
-                    }
+        ZStack {
+            switch viewModel.viewState {
+            case .noteList:
+                List(loggedInUser.notes, id: \.id) {
+                    NoteListRow(note: $0)
                 }
-            ,
-            isActive: $isShowingAddNote) {
-                EmptyView()
-            }
-            .toolbar {
-                ToolbarItemGroup {
-                    NavigationLink(
-                        destination: ZStack {
-                            if isShowingFriendNotes {
-                                friendNotesView()
-                            }
-                        },
-                        isActive: $isShowingFriendNotes) {
-                            Button {
-                                isShowingFriendNotes = true
-                            } label: {
-                                Image(systemName: "person.3.fill")
-                            }
+                .toolbar {
+                    ToolbarItemGroup {
+                        Button {
+                            viewModel.viewState = .addNote
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
                         }
-                    
-                    Button {
-                        isShowingAddNote = true
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
                     }
                 }
-            }
-            .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("All Notes")
-        
-        if !loggedInUser.notes.isEmpty {
-            List(loggedInUser.notes, id: \.id) {
-                NoteListRow(note: $0)
+            case .addNote:
+                addNoteView()
             }
         }
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle(loggedInUser.userName)
+        
     }
 }
 
@@ -81,9 +58,6 @@ struct NoteListView_Previews: PreviewProvider {
                 )
             ),
             addNoteView: {
-                EmptyView()
-            },
-            friendNotesView: {
                 EmptyView()
             }
         )
