@@ -18,47 +18,57 @@ struct NoteChallengeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView(
-                viewModel: LoginViewModel(
-                    userInfoUseCase: UserInfoUseCaseImpl(
-                        userInfoRepository: UserInfoRepositoryImpl(
-                            service: FirebaseUserInfoService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
-                        )
-                    )
-                ), loggedInView: {
-                    NoteListView(
-                        viewModel: NoteListViewModel(
-                            userNoteUseCase: UserNoteUseCaseImpl(
-                                userNoteRepository: UserNotesRepositoryImpl(
-                                    userNoteService: FirebaseUserNoteService(
-                                        databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference()
-                                    )
-                                )
-                            )
-                        ),
-                        addNoteView: {
-                            AddNoteView(
-                                viewModel: AddNoteViewModel(
-                                    userNoteUseCase: UserNoteUseCaseImpl(
-                                        userNoteRepository: UserNotesRepositoryImpl(
-                                            userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
-                                        )
-                                    )
-                                )
-                            )
-                        }, friendNotesView: {
-                            FriendNotesView(viewModel: FriendNotesViewModel(
-                                userNoteUseCase: UserNoteUseCaseImpl(
-                                    userNoteRepository: UserNotesRepositoryImpl(
-                                        userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
-                                        )
-                                    )
-                                )
-                            )
-                        }
-                    )
-                }
-            )
+            makeLogginView()
         }
+    }
+    
+    private func makeLogginView() -> some View {
+        let loginVM = LoginViewModel(
+            userInfoUseCase: UserInfoUseCaseImpl(
+                userInfoRepository: UserInfoRepositoryImpl(
+                    service: FirebaseUserInfoService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                )
+            )
+        )
+        return LoginView(
+            viewModel: loginVM,
+            loggedInView: makeLoggedView
+        )
+    }
+    
+    private func makeLoggedView() -> some View {
+        let noteListVM = NoteListViewModel(
+            userNoteUseCase: UserNoteUseCaseImpl(
+                userNoteRepository: UserNotesRepositoryImpl(
+                    userNoteService: FirebaseUserNoteService(
+                        databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference()
+                    )
+                )
+            )
+        )
+        let addNoteVM = AddNoteViewModel(
+            userNoteUseCase: UserNoteUseCaseImpl(
+                userNoteRepository: UserNotesRepositoryImpl(
+                    userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                )
+            )
+        )
+        let friendNoteVM = FriendNotesViewModel(
+            userNoteUseCase: UserNoteUseCaseImpl(
+                userNoteRepository: UserNotesRepositoryImpl(
+                    userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                    )
+                )
+            )
+        return NoteListView(
+            viewModel: noteListVM,
+            addNoteView: {
+                AddNoteView(viewModel: addNoteVM) { _ in
+                    
+                }
+            }, friendNotesView: {
+                FriendNotesView(viewModel: friendNoteVM)
+            }
+        )
     }
 }
