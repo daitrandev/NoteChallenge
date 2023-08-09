@@ -15,14 +15,18 @@ import FirebaseDatabaseSwift
 
 struct AppFactory {
     static func makeFirebaseUserInfoService() -> UserInfoService {
-        FirebaseUserInfoService(databaseRef: Database.database(
-            url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference()
+        FirebaseUserInfoService(
+            databaseRef: Database.database(
+                url: FirebaseKey.database
+            ).reference()
         )
     }
     
     static func makeFirebaseUserNoteService() -> UserNoteService {
-        FirebaseUserNoteService(databaseRef: Database.database(
-            url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference()
+        FirebaseUserNoteService(
+            databaseRef: Database.database(
+                url: FirebaseKey.database
+            ).reference()
         )
     }
     
@@ -41,7 +45,7 @@ struct AppFactory {
         let addNoteVM = AddNoteViewModel(
             userNoteUseCase: UserNoteUseCaseImpl(
                 userNoteRepository: UserNotesRepositoryImpl(
-                    userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                    userNoteService: makeFirebaseUserNoteService()
                 )
             )
         )
@@ -56,7 +60,6 @@ struct AppFactory {
                 )
             )
         )
-        
         return NoteListView(
             viewModel: noteListVM,
             addNoteView: { makeAddNote(didAddNote: { _ in noteListVM.viewState = .noteList }) }
