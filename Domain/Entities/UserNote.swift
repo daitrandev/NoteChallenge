@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserNote: Codable {
+public struct UserNote: Codable, Equatable {
     public let id: String
     public let content: String
     
