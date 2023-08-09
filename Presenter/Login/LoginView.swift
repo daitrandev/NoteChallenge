@@ -30,8 +30,7 @@ public struct LoginView<T: LoginViewModelType, V: View>: View {
                     isActive: $viewModel.showNoteList) {
                         EmptyView()
                     }
-                
-                Text("Input user name")
+
                 TextField("Username", text: $viewModel.userName)
                     .padding()
                     .frame(width: 300, height: 50)
@@ -78,9 +77,17 @@ private class UserInfoServiceMock: UserInfoService {
     func fetchUserInfo(userName: String) async throws -> UserInfo {
         .init(userName: "", notes: [])
     }
+    
+    func fetchAllUsers() async throws -> [UserInfo] {
+        []
+    }
 }
 
 private class UserInfoRepositoryMock: UserInfoRepository {
+    func fetchAllUsers() async throws -> [UserInfo] {
+        []
+    }
+    
     func fetchUserInfo(userName: String) async throws -> UserInfo {
         .init(userName: "1", notes: [])
     }
