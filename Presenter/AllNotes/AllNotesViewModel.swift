@@ -1,5 +1,5 @@
 //
-//  FriendNotesViewModel.swift
+//  AllNotesViewModel.swift
 //  Presenter
 //
 //  Created by Dai Tran on 8/8/23.
@@ -14,7 +14,7 @@ public protocol FriendNotesViewModelType: ObservableObject {
     func fetchUsers() async
 }
 
-public final class FriendNotesViewModel: FriendNotesViewModelType {
+public final class AllNotesViewModel: FriendNotesViewModelType {
     private let userInfoUseCase: UserInfoUseCase
     @Published public var users: [UserInfo] = []
     

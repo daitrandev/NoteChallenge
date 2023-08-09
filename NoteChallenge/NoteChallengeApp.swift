@@ -32,14 +32,14 @@ struct NoteChallengeApp: App {
     }
     
     private func makeFriendNotesView() -> some View {
-        let friendNoteVM = FriendNotesViewModel(
+        let friendNoteVM = AllNotesViewModel(
             userInfoUseCase: UserInfoUseCaseImpl(
                 userInfoRepository: UserInfoRepositoryImpl(
                     service: FirebaseUserInfoService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
                     )
                 )
             )
-        return FriendNotesView(viewModel: friendNoteVM)
+        return AllNotesView(viewModel: friendNoteVM)
     }
     
     private func makeLogginView() -> some View {

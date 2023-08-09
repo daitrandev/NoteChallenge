@@ -1,5 +1,5 @@
 //
-//  FriendNotesView.swift
+//  AllNotesView.swift
 //  Presenter
 //
 //  Created by Dai Tran on 8/8/23.
@@ -8,7 +8,7 @@
 import Domain
 import SwiftUI
 
-public struct FriendNotesView<T: FriendNotesViewModelType>: View {
+public struct AllNotesView<T: FriendNotesViewModelType>: View {
     @ObservedObject var viewModel: T
     
     public init(viewModel: T) {
@@ -41,7 +41,7 @@ public struct FriendNotesView<T: FriendNotesViewModelType>: View {
 
 struct FriendNote_Previews: PreviewProvider {
     static var previews: some View {
-        FriendNotesView(viewModel: FriendNotesViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryMock())))
+        AllNotesView(viewModel: AllNotesViewModel(userInfoUseCase: UserInfoUseCaseImpl(userInfoRepository: UserInfoRepositoryMock())))
     }
 }
 
