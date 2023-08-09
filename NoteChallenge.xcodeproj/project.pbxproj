@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80504412A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */; };
 		F8A70AB62A831FCA008ABCF1 /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BA2A8298C9004AEE5F /* AllNotesView.swift */; };
 		F8A70AB72A831FCA008ABCF1 /* AllNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BC2A829991004AEE5F /* AllNotesViewModel.swift */; };
 		F8A70AB92A8397F6008ABCF1 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */; };
@@ -17,6 +18,7 @@
 		F8A70AE62A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE52A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift */; };
 		F8A70AE82A83D8E6008ABCF1 /* AllNotesVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE72A83D8E6008ABCF1 /* AllNotesVMTests.swift */; };
 		F8A70AEA2A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AE92A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift */; };
+		F8A70AED2A83DE56008ABCF1 /* UserInfoRepositoryImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AEC2A83DE56008ABCF1 /* UserInfoRepositoryImplTests.swift */; };
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
 		F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */; };
 		F8A9525B2A80D285004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525A2A80D285004AEE5F /* FirebaseDatabase */; };
@@ -58,7 +60,6 @@
 		F8D88A242A809D67005DB81B /* UserNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A232A809D67005DB81B /* UserNoteUseCase.swift */; };
 		F8D88A262A809FE0005DB81B /* UserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A252A809FE0005DB81B /* UserInfoUseCase.swift */; };
 		F8D88A342A80AA61005DB81B /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D88A2C2A80AA60005DB81B /* Data.framework */; };
-		F8D88A3B2A80AA61005DB81B /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D88A3A2A80AA61005DB81B /* DataTests.swift */; };
 		F8D88A3C2A80AA61005DB81B /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D88A2E2A80AA61005DB81B /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8D88A3F2A80AA61005DB81B /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D88A2C2A80AA60005DB81B /* Data.framework */; };
 		F8D88A402A80AA61005DB81B /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8D88A2C2A80AA60005DB81B /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -157,6 +158,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotesRepositoryImpTests.swift; sourceTree = "<group>"; };
 		F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseKey.swift; sourceTree = "<group>"; };
 		F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListVMTests.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		F8A70AE52A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteUseCaseMock.swift; sourceTree = "<group>"; };
 		F8A70AE72A83D8E6008ABCF1 /* AllNotesVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesVMTests.swift; sourceTree = "<group>"; };
 		F8A70AE92A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseMock.swift; sourceTree = "<group>"; };
+		F8A70AEC2A83DE56008ABCF1 /* UserInfoRepositoryImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepositoryImplTests.swift; sourceTree = "<group>"; };
 		F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8A952532A80CD5D004AEE5F /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		F8A952552A80CDD4004AEE5F /* UserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteService.swift; sourceTree = "<group>"; };
@@ -202,7 +205,6 @@
 		F8D88A2C2A80AA60005DB81B /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D88A2E2A80AA61005DB81B /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		F8D88A332A80AA61005DB81B /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8D88A3A2A80AA61005DB81B /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		F8D88A542A80AD03005DB81B /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		F8D88A562A80ADC9005DB81B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +276,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80504422A83E91900D8A35C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F8A70AEC2A83DE56008ABCF1 /* UserInfoRepositoryImplTests.swift */,
+				F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		F8A70ABA2A839A6E008ABCF1 /* FirebaseService */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,7 +519,7 @@
 		F8D88A392A80AA61005DB81B /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8D88A3A2A80AA61005DB81B /* DataTests.swift */,
+				F80504422A83E91900D8A35C /* Repositories */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -894,7 +905,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D88A3B2A80AA61005DB81B /* DataTests.swift in Sources */,
+				F80504412A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift in Sources */,
+				F8A70AED2A83DE56008ABCF1 /* UserInfoRepositoryImplTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
