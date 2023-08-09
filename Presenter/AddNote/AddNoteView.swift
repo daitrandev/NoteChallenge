@@ -40,6 +40,7 @@ public struct AddNoteView<T: AddNoteViewModelType>: View {
                         didAddNote(notes.last)
                     } catch {
                         debugPrint(error.localizedDescription)
+                        didAddNote(nil)
                     }
                 }
             }
