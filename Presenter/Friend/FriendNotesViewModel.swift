@@ -43,9 +43,10 @@ public final class FriendNotesViewModel: FriendNotesViewModelType {
         $username
             .debounce(for: .seconds(1), scheduler: RunLoop.main)
             .drop(while: { $0.isEmpty })
-            .sink(receiveValue: { [fetchUserNotes] value in
-                Task.detached(priority: .userInitiated) {
-                    await fetchUserNotes()
+            .sink(receiveValue: { [weak self] value in
+                let fetchUserNote = self?.fetchUserNotes
+                Task {
+                    await fetchUserNote?()
                 }
             })
             .store(in: &subscriptions)
