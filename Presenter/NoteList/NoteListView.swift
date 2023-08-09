@@ -8,17 +8,22 @@
 import Domain
 import SwiftUI
 
-public struct NoteListView<T: NoteListViewModelType, V: View>: View {
+public struct NoteListView<T: NoteListViewModelType, V: View, N: View>: View {
     private let addNoteView: (() -> V)
+    private let friendNotesView: (() -> N)
     
     @State private var isShowingAddNote: Bool = false
+    @State private var isShowingFriendNotes: Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var loggedInUser: UserInfoEnv
     @ObservedObject var viewModel: T
     
-    public init(viewModel: T, addNoteView: @escaping (() -> V)) {
+    public init(viewModel: T,
+                addNoteView: @escaping (() -> V),
+                friendNotesView: @escaping (() -> N)) {
         self.viewModel = viewModel
         self.addNoteView = addNoteView
+        self.friendNotesView = friendNotesView
     }
     
     public var body: some View {
@@ -34,7 +39,21 @@ public struct NoteListView<T: NoteListViewModelType, V: View>: View {
                 EmptyView()
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItemGroup {
+                    NavigationLink(
+                        destination: ZStack {
+                            if isShowingFriendNotes {
+                                friendNotesView()
+                            }
+                        },
+                        isActive: $isShowingFriendNotes) {
+                            Button {
+                                isShowingFriendNotes = true
+                            } label: {
+                                Image(systemName: "person.3.fill")
+                            }
+                        }
+                    
                     Button {
                         isShowingAddNote = true
                     } label: {
@@ -63,8 +82,15 @@ struct NoteListView_Previews: PreviewProvider {
             ),
             addNoteView: {
                 EmptyView()
+            },
+            friendNotesView: {
+                EmptyView()
             }
         )
+        .environmentObject(UserInfoEnv(userName: "Hello", notes: [
+            .init(id: "1", content: "Hello"),
+            .init(id: "2", content: "World"),
+        ]))
     }
 }
 
