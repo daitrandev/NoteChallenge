@@ -11,6 +11,7 @@
 		F8A70AB72A831FCA008ABCF1 /* AllNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BC2A829991004AEE5F /* AllNotesViewModel.swift */; };
 		F8A70AB92A8397F6008ABCF1 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */; };
 		F8A70ABC2A839A87008ABCF1 /* FirebaseDatabaseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */; };
+		F8A70ABE2A839CEA008ABCF1 /* NoteListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */; };
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
 		F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */; };
 		F8A9525B2A80D285004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525A2A80D285004AEE5F /* FirebaseDatabase */; };
@@ -19,7 +20,6 @@
 		F8A952662A80E9E9004AEE5F /* UserInfoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952652A80E9E9004AEE5F /* UserInfoRepositoryImpl.swift */; };
 		F8A952682A80EFDB004AEE5F /* UserNotesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952672A80EFDB004AEE5F /* UserNotesRepositoryImpl.swift */; };
 		F8A952772A810789004AEE5F /* Presenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A9526F2A810789004AEE5F /* Presenter.framework */; };
-		F8A9527E2A810789004AEE5F /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9527D2A810789004AEE5F /* PresenterTests.swift */; };
 		F8A9527F2A810789004AEE5F /* Presenter.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A952712A810789004AEE5F /* Presenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8A952822A810789004AEE5F /* Presenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A9526F2A810789004AEE5F /* Presenter.framework */; };
 		F8A952832A810789004AEE5F /* Presenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8A9526F2A810789004AEE5F /* Presenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -154,6 +154,7 @@
 /* Begin PBXFileReference section */
 		F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseKey.swift; sourceTree = "<group>"; };
+		F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListVMTests.swift; sourceTree = "<group>"; };
 		F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8A952532A80CD5D004AEE5F /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		F8A952552A80CDD4004AEE5F /* UserNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteService.swift; sourceTree = "<group>"; };
@@ -164,7 +165,6 @@
 		F8A9526F2A810789004AEE5F /* Presenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A952712A810789004AEE5F /* Presenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presenter.h; sourceTree = "<group>"; };
 		F8A952762A810789004AEE5F /* PresenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresenterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8A9527D2A810789004AEE5F /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		F8A9528B2A810812004AEE5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8A9528D2A810D8B004AEE5F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F8A9529D2A813589004AEE5F /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		F8A9527C2A810789004AEE5F /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8A9527D2A810789004AEE5F /* PresenterTests.swift */,
+				F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -705,7 +705,6 @@
 					};
 					F8D88A322A80AA61005DB81B = {
 						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = F8D889B42A809702005DB81B;
 					};
 				};
 			};
@@ -813,7 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A9527E2A810789004AEE5F /* PresenterTests.swift in Sources */,
+				F8A70ABE2A839CEA008ABCF1 /* NoteListVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,7 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C59ZVY87DS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -974,7 +973,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C59ZVY87DS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1006,6 +1005,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C59ZVY87DS;
@@ -1014,6 +1014,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge.PresenterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1024,6 +1025,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C59ZVY87DS;
@@ -1032,6 +1034,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge.PresenterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1426,7 +1429,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C59ZVY87DS;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge.DataTests;
@@ -1436,7 +1439,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoteChallenge";
 			};
 			name = Debug;
 		};
@@ -1448,7 +1450,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C59ZVY87DS;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daitrandev.notechallenge.DataTests;
@@ -1458,7 +1460,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoteChallenge";
 			};
 			name = Release;
 		};
