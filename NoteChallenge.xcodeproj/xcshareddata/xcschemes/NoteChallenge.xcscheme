@@ -62,6 +62,17 @@
                ReferencedContainer = "container:NoteChallenge.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8A70ACA2A839ED4008ABCF1"
+               BuildableName = "abcTests.xctest"
+               BlueprintName = "abcTests"
+               ReferencedContainer = "container:NoteChallenge.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
