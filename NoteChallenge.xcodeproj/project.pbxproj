@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8A70AB62A831FCA008ABCF1 /* FriendNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BA2A8298C9004AEE5F /* FriendNotesView.swift */; };
+		F8A70AB72A831FCA008ABCF1 /* FriendNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BC2A829991004AEE5F /* FriendNotesViewModel.swift */; };
 		F8A952522A80B2D6004AEE5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8A952512A80B2D6004AEE5F /* GoogleService-Info.plist */; };
 		F8A952582A80CFB2004AEE5F /* FirebaseUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952572A80CFB2004AEE5F /* FirebaseUserInfoService.swift */; };
 		F8A9525B2A80D285004AEE5F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F8A9525A2A80D285004AEE5F /* FirebaseDatabase */; };
@@ -170,6 +172,8 @@
 		F8A952AC2A8165F9004AEE5F /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		F8A952AF2A81BDED004AEE5F /* UserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoKey.swift; sourceTree = "<group>"; };
 		F8A952B32A81E26F004AEE5F /* UserInfoEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEnv.swift; sourceTree = "<group>"; };
+		F8A952BA2A8298C9004AEE5F /* FriendNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNotesView.swift; sourceTree = "<group>"; };
+		F8A952BC2A829991004AEE5F /* FriendNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNotesViewModel.swift; sourceTree = "<group>"; };
 		F8D889B52A809702005DB81B /* NoteChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D889B82A809702005DB81B /* NoteChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteChallengeApp.swift; sourceTree = "<group>"; };
 		F8D889BC2A809703005DB81B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 		F8A952702A810789004AEE5F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F8A952B92A8297FC004AEE5F /* Friend */,
 				F8A952AE2A81BD85004AEE5F /* Environments */,
 				F8A952A92A815E95004AEE5F /* AddNote */,
 				F8A9529F2A8148F2004AEE5F /* NoteList */,
@@ -348,6 +353,15 @@
 				F8A952B32A81E26F004AEE5F /* UserInfoEnv.swift */,
 			);
 			path = Environments;
+			sourceTree = "<group>";
+		};
+		F8A952B92A8297FC004AEE5F /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				F8A952BA2A8298C9004AEE5F /* FriendNotesView.swift */,
+				F8A952BC2A829991004AEE5F /* FriendNotesViewModel.swift */,
+			);
+			path = Friend;
 			sourceTree = "<group>";
 		};
 		F8D889AC2A809702005DB81B = {
@@ -774,7 +788,9 @@
 				F8A952B02A81BDED004AEE5F /* UserInfoKey.swift in Sources */,
 				F8A952AD2A8165F9004AEE5F /* AddNoteViewModel.swift in Sources */,
 				F8A952B42A81E26F004AEE5F /* UserInfoEnv.swift in Sources */,
+				F8A70AB72A831FCA008ABCF1 /* FriendNotesViewModel.swift in Sources */,
 				F8A952AB2A815EEE004AEE5F /* AddNoteView.swift in Sources */,
+				F8A70AB62A831FCA008ABCF1 /* FriendNotesView.swift in Sources */,
 				F8A952A32A814C6A004AEE5F /* NoteListViewModel.swift in Sources */,
 				F8A9528E2A810D8B004AEE5F /* LoginViewModel.swift in Sources */,
 				F8A952A52A814F14004AEE5F /* NoteListRow.swift in Sources */,

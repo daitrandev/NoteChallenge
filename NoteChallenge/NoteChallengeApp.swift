@@ -41,7 +41,16 @@ struct NoteChallengeApp: App {
                                 viewModel: AddNoteViewModel(
                                     userNoteUseCase: UserNoteUseCaseImpl(
                                         userNoteRepository: UserNotesRepositoryImpl(
-                                            userNoteService: FirebaseUserNoteService(databaseRef:  Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                                            userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
+                                        )
+                                    )
+                                )
+                            )
+                        }, friendNotesView: {
+                            FriendNotesView(viewModel: FriendNotesViewModel(
+                                userNoteUseCase: UserNoteUseCaseImpl(
+                                    userNoteRepository: UserNotesRepositoryImpl(
+                                        userNoteService: FirebaseUserNoteService(databaseRef: Database.database(url: "https://notechallenge-52479-default-rtdb.asia-southeast1.firebasedatabase.app/").reference())
                                         )
                                     )
                                 )
