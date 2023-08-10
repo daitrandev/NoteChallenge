@@ -6,20 +6,32 @@
 
 ## Table of Contents
 * [Overview](#overview)
-	* [Features](#features)
-	* [Architecture](#architecture) 
-	* [Demo](#demo)
+    * [Features](#features)
+    * [Architecture](#architecture)
+    * [Testing](#testing)
+    * [Demo](#demo)
 * [Requirements](#overview)
 * [Installation](#installation)
 * [Author](#author)
 
 ## Overview
-The project is implemented using the Clean Architecture and MVVM. 
+![Alt text](https://github.com/daitrandev/assets/blob/master/NoteChallenge/clean-architecture-concept.png)
+The application is implemented using the Clean Architecture and MVVM. The ultimate goal of Clean Architecture is to help the project not slow down developing when growing up both in team size and project size.
+In addition to make developing process steady, the architecture also helps the project easier to maintain, test and reusable in many different kind of systems.
 
 ### Features
+* The application allows to login with user name and show the list of the notes that created by the user.
+* The application can also show the notes of all users logged in to the application. 
 
 ### Architecture
-![Alt text](https://github.com/daitrandev/assets/blob/master/NoteChallenge/clean-architecture-concept.png)
+![](https://github.com/daitrandev/assets/blob/master/NoteChallenge/app_architecture.jpg)
+We have three main components here in this architecture.
+* **Domain**: The layer where all business logic reside. It includes some layers: Entities + Use Cases + Abstractions.
+* **Data**: The layer will implement some abstractions from the **Domain** to serve the relating business of data purposes. In includes some layers: Data Source + Repositories.
+* **Presenter**: The layer will also implement some abstractions from the **Domain** to make the UI interactive with the data underneath.
+
+### Testing
+The project also includes both UI Tests and Unit Tests to make the functionalities work more reliable and maintainable. Make sure you run the test before updating anything.
 
 ### Demo
 ![](https://github.com/daitrandev/assets/blob/master/NoteChallenge/demo.gif)
@@ -29,7 +41,12 @@ The project is implemented using the Clean Architecture and MVVM.
 * Xcode 14 or later.
 
 ## Installation
-
+* **Step 1**: Clone the project by this command:
+```
+git clone https://github.com/daitrandev/NoteChallenge.git
+```
+* **Step 2**: Open the `NoteChallenge.xcodeproj` file then grab a ☕️ to wait for the SPM packages fetching.
+* **Step 3**: Select a target to build and run.
 
 ## Author
 * Dai Tran
