@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import Domain
+import Data
+import Presenter
+import FirebaseDatabase
+import FirebaseDatabaseSwift
 
 @main
 struct NoteChallengeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                AppFactory.makeLogginView()
+                    .tabItem {
+                        Label("Personal", systemImage: "person")
+                    }
+                AppFactory.makeFriendNotesView()
+                    .tabItem {
+                        Label("All Notes", systemImage: "line.horizontal.3")
+                    }
+            }
         }
     }
 }
