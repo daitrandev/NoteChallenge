@@ -10,7 +10,7 @@ import Domain
 @testable import Presenter
 
 final class AddNoteVMTests: XCTestCase {
-    func test_addNote() async {
+    func test_addNote() {
         // Given
         let initialNotes: [UserNote] = [
             .init(id: "1", content: "Hello"),
@@ -21,12 +21,12 @@ final class AddNoteVMTests: XCTestCase {
         vm.note = newNote.content
         let expectedResult = initialNotes + [newNote]
         
-        // When
-        do {
+        runAsyncTest {
+            // When
             let result = try await vm.createNote(userName: "abc")
+            
+            // Then
             XCTAssertEqual(expectedResult, result)
-        } catch {
-            XCTFail("Cannot add note")
         }
     }
 }

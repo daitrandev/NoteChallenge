@@ -15,20 +15,13 @@ final class LoginVMTests: XCTestCase {
         let addingUser = UserInfo(userName: "Xin Chao", notes: [])
         let vm = LoginViewModel(userInfoUseCase: UserInfoUseCaseMock(users: []))
         vm.userName = addingUser.userName
-        let expectation = expectation(description: "Test User Login")
         
-        //When
-        Task {
-            do {
-                try await vm.didTapLogin()
-                expectation.fulfill()
-            } catch {
-                XCTFail("Cannot log in")
-            }
+        runAsyncTest {
+            // When
+            try await vm.didTapLogin()
+            
+            // Then
+            XCTAssertEqual(vm.loggedInUser.userName, vm.userName)
         }
-        waitForExpectations(timeout: 5)
-        
-        // Then
-        XCTAssertEqual(vm.loggedInUser.userName, vm.userName)
     }
 }

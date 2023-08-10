@@ -11,6 +11,7 @@
 		F80504472A83F0A500D8A35C /* UserNoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80504462A83F0A500D8A35C /* UserNoteUseCaseTests.swift */; };
 		F84813FA2A847E9200B3EBFD /* RunAsyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84813F92A847E9200B3EBFD /* RunAsyncTest.swift */; };
 		F84813FC2A847FB400B3EBFD /* UserInfoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84813FB2A847FB400B3EBFD /* UserInfoUseCaseTests.swift */; };
+		F84813FF2A84A23F00B3EBFD /* RunAsyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84813FE2A84A23F00B3EBFD /* RunAsyncTest.swift */; };
 		F8A70AB62A831FCA008ABCF1 /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BA2A8298C9004AEE5F /* AllNotesView.swift */; };
 		F8A70AB72A831FCA008ABCF1 /* AllNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BC2A829991004AEE5F /* AllNotesViewModel.swift */; };
 		F8A70AB92A8397F6008ABCF1 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */; };
@@ -165,6 +166,7 @@
 		F80504462A83F0A500D8A35C /* UserNoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteUseCaseTests.swift; sourceTree = "<group>"; };
 		F84813F92A847E9200B3EBFD /* RunAsyncTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAsyncTest.swift; sourceTree = "<group>"; };
 		F84813FB2A847FB400B3EBFD /* UserInfoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseTests.swift; sourceTree = "<group>"; };
+		F84813FE2A84A23F00B3EBFD /* RunAsyncTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAsyncTest.swift; sourceTree = "<group>"; };
 		F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseKey.swift; sourceTree = "<group>"; };
 		F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListVMTests.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = "XCTestCase+Ext";
 			sourceTree = "<group>";
 		};
+		F84813FD2A84A22F00B3EBFD /* XCTestCase+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				F84813FE2A84A23F00B3EBFD /* RunAsyncTest.swift */,
+			);
+			path = "XCTestCase+Ext";
+			sourceTree = "<group>";
+		};
 		F8A70ABA2A839A6E008ABCF1 /* FirebaseService */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +360,7 @@
 		F8A9527C2A810789004AEE5F /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
+				F84813FD2A84A22F00B3EBFD /* XCTestCase+Ext */,
 				F8A70AEB2A83DD1C008ABCF1 /* UseCaseMocks */,
 				F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */,
 				F8A70ADF2A83A481008ABCF1 /* LoginVMTests.swift */,
@@ -864,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A70AE62A83A8C5008ABCF1 /* UserNoteUseCaseMock.swift in Sources */,
+				F84813FF2A84A23F00B3EBFD /* RunAsyncTest.swift in Sources */,
 				F8A70AE22A83A7EE008ABCF1 /* AddNoteVMTests.swift in Sources */,
 				F8A70AEA2A83DA2D008ABCF1 /* UserInfoUseCaseMock.swift in Sources */,
 				F8A70AE02A83A481008ABCF1 /* LoginVMTests.swift in Sources */,

@@ -17,16 +17,13 @@ final class NoteListVMTests: XCTestCase {
             .init(id: "2", content: "World")
         ]
         let vm = NoteListViewModel(userNoteUseCase: UserNoteUseCaseMock(notes: expectedNotes))
-        let expectation = expectation(description: "Test fetch note")
         
-        // When
-        Task {
+        runAsyncTest {
+            // When
             await vm.fetchNotes(userName: "abc")
-            expectation.fulfill()
+            
+            // Then
+            XCTAssertEqual(vm.notes, expectedNotes)
         }
-        waitForExpectations(timeout: 5)
-        
-        // Then
-        XCTAssertEqual(vm.notes, expectedNotes)
     }
 }
