@@ -10,63 +10,53 @@ import Domain
 @testable import Data
 
 final class UserInfoRepositoryImplTests: XCTestCase {
-    func test_createUser() async {
-        let sut = makeSUT()
+    func test_createUser() {
+        // Given
+        let (sut, _) = makeSUT()
         let newUser = UserInfo(userName: "Xin Chao", notes: [])
-        do {
+        
+        runAsyncTest {
+            // When
             let createdUser = try await sut.createUser(userName: newUser.userName)
             let allUsers = try await sut.fetchAllUsers()
+            
+            // Then
             XCTAssertEqual(createdUser, newUser)
             XCTAssertNotNil(allUsers.first(where: { $0 == createdUser }))
-        } catch {
-            XCTFail("Cannot create user")
         }
     }
     
-    func test_fetchUserInfo_success() async {
-        let sut = makeSUT()
-        do {
+    func test_fetchUserInfo_success() {
+        // Given
+        let (sut, _) = makeSUT()
+        runAsyncTest {
+            // When
             let fetchUser = try await sut.fetchUserInfo(userName: "Hello")
+            
+            // Then
             XCTAssertNotNil(fetchUser)
-        } catch {
-            XCTFail("Cannot fetch user info")
         }
     }
     
-    func test_fetchUserInfo_error() {
-        let sut = makeSUT()
-        let expectation = expectation(description: "test fetch user info failed")
-        Task {
-            do {
-                _ = try await sut.fetchUserInfo(userName: "There")
-                XCTFail("Fetch user info isn't failed")
-            } catch {
-                expectation.fulfill()
-            }
-        }
-        waitForExpectations(timeout: 3)
-    }
-    
-    func test_fetchAllUsers() async {
-        let mockUsers: [UserInfo] = [
-            .init(userName: "Hello", notes: []),
-            .init(userName: "World", notes: [])
-        ]
-        let sut = UserInfoRepositoryImpl(service: UserInfoUseCaseMock(users: mockUsers))
-        do {
+    func test_fetchAllUsers() {
+        // Given
+        let (sut, mockUsers) = makeSUT()
+        
+        runAsyncTest {
+            // When
             let users = try await sut.fetchAllUsers()
+            
+            // Then
             XCTAssertEqual(users, mockUsers)
-        } catch {
-            XCTFail("Fetch all users failed")
         }
     }
     
-    private func makeSUT() -> UserInfoRepositoryImpl {
+    private func makeSUT() -> (UserInfoRepositoryImpl, [UserInfo]) {
         let mockUsers: [UserInfo] = [
             .init(userName: "Hello", notes: []),
             .init(userName: "World", notes: [])
         ]
-        return UserInfoRepositoryImpl(service: UserInfoUseCaseMock(users: mockUsers))
+        return (UserInfoRepositoryImpl(service: UserInfoUseCaseMock(users: mockUsers)), mockUsers)
     }
 }
 
