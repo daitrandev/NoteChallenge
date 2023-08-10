@@ -18,6 +18,9 @@ public final class FirebaseUserInfoService: UserInfoService {
     }
     
     public func createUser(userName: String) async throws -> UserInfo {
+        if userName.isEmpty {
+            throw NSError(domain: "The username is empty", code: 0)
+        }
         if let existingUser = try? await fetchUserInfo(userName: userName) {
             return existingUser
         }
