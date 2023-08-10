@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F80504412A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */; };
+		F80504472A83F0A500D8A35C /* UserNoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80504462A83F0A500D8A35C /* UserNoteUseCaseTests.swift */; };
+		F84813FA2A847E9200B3EBFD /* RunAsyncTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84813F92A847E9200B3EBFD /* RunAsyncTest.swift */; };
+		F84813FC2A847FB400B3EBFD /* UserInfoUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84813FB2A847FB400B3EBFD /* UserInfoUseCaseTests.swift */; };
 		F8A70AB62A831FCA008ABCF1 /* AllNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BA2A8298C9004AEE5F /* AllNotesView.swift */; };
 		F8A70AB72A831FCA008ABCF1 /* AllNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A952BC2A829991004AEE5F /* AllNotesViewModel.swift */; };
 		F8A70AB92A8397F6008ABCF1 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */; };
@@ -159,6 +162,9 @@
 
 /* Begin PBXFileReference section */
 		F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotesRepositoryImpTests.swift; sourceTree = "<group>"; };
+		F80504462A83F0A500D8A35C /* UserNoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNoteUseCaseTests.swift; sourceTree = "<group>"; };
+		F84813F92A847E9200B3EBFD /* RunAsyncTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAsyncTest.swift; sourceTree = "<group>"; };
+		F84813FB2A847FB400B3EBFD /* UserInfoUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUseCaseTests.swift; sourceTree = "<group>"; };
 		F8A70AB82A8397F6008ABCF1 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		F8A70ABB2A839A87008ABCF1 /* FirebaseDatabaseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseKey.swift; sourceTree = "<group>"; };
 		F8A70ABD2A839CEA008ABCF1 /* NoteListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListVMTests.swift; sourceTree = "<group>"; };
@@ -283,6 +289,14 @@
 				F80504402A83E7E500D8A35C /* UserNotesRepositoryImpTests.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F84813F82A847E7B00B3EBFD /* XCTestCase+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				F84813F92A847E9200B3EBFD /* RunAsyncTest.swift */,
+			);
+			path = "XCTestCase+Ext";
 			sourceTree = "<group>";
 		};
 		F8A70ABA2A839A6E008ABCF1 /* FirebaseService */ = {
@@ -473,7 +487,10 @@
 		F8D88A0B2A809B4C005DB81B /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
+				F84813F82A847E7B00B3EBFD /* XCTestCase+Ext */,
 				F8D88A0C2A809B4C005DB81B /* DomainTests.swift */,
+				F80504462A83F0A500D8A35C /* UserNoteUseCaseTests.swift */,
+				F84813FB2A847FB400B3EBFD /* UserInfoUseCaseTests.swift */,
 			);
 			path = DomainTests;
 			sourceTree = "<group>";
@@ -885,7 +902,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84813FC2A847FB400B3EBFD /* UserInfoUseCaseTests.swift in Sources */,
+				F80504472A83F0A500D8A35C /* UserNoteUseCaseTests.swift in Sources */,
 				F8D88A0D2A809B4C005DB81B /* DomainTests.swift in Sources */,
+				F84813FA2A847E9200B3EBFD /* RunAsyncTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
