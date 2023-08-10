@@ -18,7 +18,7 @@
 ![Alt text](https://github.com/daitrandev/assets/blob/master/NoteChallenge/clean-architecture-concept.png)
 
 The application is implemented using the Clean Architecture and MVVM. The ultimate goal of Clean Architecture is to help the project not slow down developing when growing up both in team size and project size.
-In addition to make developing process steady, the architecture also helps the project easier to maintain, test and reusable in many different kind of systems.
+In addition to make developing process steady, the architecture also helps the project easier to maintain, test and reusable in many different kind of systems like macOS, watchOS, iOS, tvOS.
 
 We have three main components here in this architecture.
 * **Domain**: The layer where all business logic reside. It includes some layers: Entities + Use Cases + Abstractions.
@@ -33,9 +33,9 @@ We have three main components here in this architecture.
 ![](https://github.com/daitrandev/assets/blob/master/NoteChallenge/app_architecture.jpg)
 
 The application is separated into three main modules: 
-**Domain**: This module contains specific use cases and repositories abstractions for managing notes like saving notes, creating notes, retrieve notes, etc. This module can be reused in many systems because it's the highest level module (most abstracted).
-**Data**: This module contains implementation of repositories using **Firebase Database** to store and retrieve the data. This module depends on the **Domain** module. The **Firebase** services can be replaced with any other frameworks.
-**Presentation**: This module contains the UI implementation and also depends on the **Domain**. Like **Data** module this UI implementation can be switch to any other frameworks as project requirements.
+* **Domain**: This module contains specific use cases and repositories abstractions for managing notes like saving notes, creating notes, retrieve notes, etc. This module can be reused in many systems because it's the highest level module (most abstracted).
+* **Data**: This module contains implementation of repositories using **Firebase Database** to store and retrieve the data. This module depends on the **Domain** module. The **Firebase** services can be replaced with any other frameworks.
+* **Presentation**: This module contains the UI implementation and also depends on the **Domain**. Like **Data** module this UI implementation can be switch to any other frameworks as project requirements.
 
 ### Testing
 The project also includes both UI Tests and Unit Tests to make the functionalities work more reliable and maintainable. Make sure you run the test before updating anything.
