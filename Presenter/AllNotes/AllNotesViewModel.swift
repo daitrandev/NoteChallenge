@@ -17,9 +17,7 @@ public protocol FriendNotesViewModelType: ObservableObject {
 public final class AllNotesViewModel: FriendNotesViewModelType {
     private let userInfoUseCase: UserInfoUseCase
     @Published public var users: [UserInfo] = []
-    
-    private var subscriptions = Set<AnyCancellable>()
-    
+        
     public init(userInfoUseCase: UserInfoUseCase) {
         self.userInfoUseCase = userInfoUseCase
     }
